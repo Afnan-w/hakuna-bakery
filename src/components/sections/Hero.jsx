@@ -2,7 +2,7 @@ import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
-import { CherrySvg, ButtercreamFlowerSvg } from '../decorative/FloatingElements'
+import { CherrySvg, ButtercreamFlowerSvg, SprinklesSvg } from '../decorative/FloatingElements'
 
 const heroWords = ['Artisan', 'Bakery', '&', 'Custom', 'Cake', 'Studio']
 
@@ -29,7 +29,18 @@ export default function Hero() {
 
   return (
     <section ref={ref} className="relative w-full overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 py-12 sm:py-16 lg:py-20">
+      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+        <span className="absolute top-6 left-4 sm:top-8 sm:left-6 lg:left-12 animate-float text-2xl sm:text-4xl">🍓</span>
+        <span className="absolute top-20 right-4 sm:top-24 sm:right-10 animate-float-slow text-2xl sm:text-3xl">🧁</span>
+        <span className="absolute bottom-12 left-1/4 hidden lg:block animate-float-slow text-2xl sm:text-3xl">✨</span>
+        <span className="absolute bottom-24 right-1/4 hidden sm:block animate-wiggle text-xl sm:text-2xl">🍪</span>
+        <span className="absolute top-1/2 left-8 hidden xl:block animate-wiggle text-xl sm:text-2xl">🎂</span>
+        <SprinklesSvg className="absolute bottom-6 left-8 w-8 h-8 animate-float-slow opacity-80" />
+        <SprinklesSvg className="absolute top-8 right-24 w-10 h-10 animate-float opacity-80" />
+        <SprinklesSvg className="absolute bottom-12 right-16 hidden sm:block w-9 h-9 animate-wiggle opacity-80" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 py-12 sm:py-16 lg:py-20 relative">
         <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
           {/* Text Side */}
           <div className="flex-1 text-center lg:text-left">

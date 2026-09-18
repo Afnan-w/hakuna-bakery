@@ -2,6 +2,7 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import Layout from './components/layout/Layout'
 import ScrollToTop from './components/layout/ScrollToTop'
+import BackgroundMusic from './components/layout/BackgroundMusic'
 import HomePage from './pages/HomePage'
 import GalleryPage from './pages/GalleryPage'
 import OrderPage from './pages/OrderPage'
@@ -14,6 +15,7 @@ export default function App() {
   return (
     <div className="grain-overlay">
       <ScrollToTop />
+      <BackgroundMusic />
       <Layout>
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
