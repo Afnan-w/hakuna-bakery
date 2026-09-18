@@ -3,31 +3,7 @@ import { Mail, Phone, MapPin } from 'lucide-react'
 
 export default function Footer() {
   return (
-    <div className="relative w-full overflow-visible">
-      <div className="absolute right-6 sm:right-16 md:right-24 -top-[48px] sm:-top-[58px] md:-top-[82px] z-0 pointer-events-none select-none">
-        <div className="relative w-32 sm:w-36 md:w-44">
-          <img
-            src="/bread-icon.webp"
-            alt=""
-            className="w-full object-contain drop-shadow-sm opacity-85 animate-float"
-            loading="lazy"
-            style={{ transform: 'rotate(-22deg)' }}
-          />
-          <div
-            className="absolute w-full animate-float-slow"
-            style={{ left: '78%', top: 'calc(22% + 13px)', transform: 'translate(-50%, -50%)' }}
-          >
-            <img
-              src="/bread-icon.webp"
-              alt=""
-              className="w-full object-contain drop-shadow-md"
-              loading="lazy"
-              style={{ transform: 'rotate(25deg)' }}
-            />
-          </div>
-        </div>
-      </div>
-
+    <div className="relative w-full">
       <footer className="w-full bg-deep-cocoa text-white pt-10 sm:pt-12 pb-6 px-4 sm:px-12 rounded-t-[24px] sm:rounded-t-[36px] shadow-2xl relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8 mb-8">
