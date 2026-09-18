@@ -60,7 +60,7 @@ export default function SignatureCakes() {
             <motion.div
               key={cake.id}
               variants={cardVariants}
-              whileHover={{ y: -4 }}
+              whileHover={{ y: -8, rotate: 2, scale: 1.05, transition: { type: 'spring', stiffness: 300, damping: 18 } }}
               className="group relative cursor-pointer flex flex-col items-center"
             >
               {cake.isBestSeller && (

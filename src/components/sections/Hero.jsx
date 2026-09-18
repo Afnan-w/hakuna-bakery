@@ -30,6 +30,9 @@ export default function Hero() {
   return (
     <section ref={ref} className="relative w-full overflow-hidden">
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+        <div className="absolute -top-24 -left-16 w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-strawberry/25 blur-3xl animate-blob" />
+        <div className="absolute top-1/3 -right-24 w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-pistachio/25 blur-3xl animate-blob" style={{ animationDelay: '3s' }} />
+        <div className="absolute -bottom-28 left-1/3 w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-lilac/25 blur-3xl animate-blob" style={{ animationDelay: '6s' }} />
         <span className="absolute top-6 left-4 sm:top-8 sm:left-6 lg:left-12 animate-float text-2xl sm:text-4xl">🍓</span>
         <span className="absolute top-20 right-4 sm:top-24 sm:right-10 animate-float-slow text-2xl sm:text-3xl">🧁</span>
         <span className="absolute bottom-12 left-1/4 hidden lg:block animate-float-slow text-2xl sm:text-3xl">✨</span>

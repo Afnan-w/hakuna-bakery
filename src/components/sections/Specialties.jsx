@@ -68,8 +68,8 @@ export default function Specialties() {
               variants={cardVariants}
               initial="hidden"
               animate={isInView ? 'visible' : 'hidden'}
-              whileHover={{ y: -6, transition: { duration: 0.3 } }}
-              className="bg-ivory rounded-2xl p-6 sm:p-7 border border-butter/60 shadow-[0_4px_20px_rgba(61,35,20,0.04)] hover:shadow-[0_8px_30px_rgba(61,35,20,0.08)] transition-shadow duration-300"
+              whileHover={{ y: -8, rotate: -1.5, scale: 1.03, transition: { type: 'spring', stiffness: 300, damping: 18 } }}
+              className="bg-ivory rounded-2xl p-6 sm:p-7 border border-butter/60 shadow-[0_4px_20px_rgba(61,35,20,0.04)] hover:border-strawberry/50 hover:shadow-[0_14px_40px_rgba(255,140,168,0.18)] transition-colors duration-300"
             >
               <div className={`inline-flex px-3 py-1 rounded-full text-[10px] font-body font-bold tracking-wider uppercase mb-4 ${item.accent}`}>
                 {item.title}

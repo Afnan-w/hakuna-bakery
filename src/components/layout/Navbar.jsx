@@ -42,7 +42,7 @@ export default function Navbar() {
             <img
               src="/logo.png"
               alt="Hakuna Potata Logo"
-              className="w-8 h-8 sm:w-9 sm:h-9 object-contain group-hover:scale-110 transition-transform duration-300"
+              className="w-8 h-8 sm:w-9 sm:h-9 object-contain group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300"
             />
             <span className="text-base sm:text-lg font-display font-bold tracking-tight text-chocolate group-hover:text-cocoa transition-colors">
               HAKUNA POTATA
@@ -54,7 +54,7 @@ export default function Navbar() {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-xs font-body font-bold tracking-[0.2em] uppercase transition-all duration-300 py-1 relative ${
+                className={`group text-xs font-body font-bold tracking-[0.2em] uppercase transition-all duration-300 py-1 relative ${
                   location.pathname === link.path
                     ? 'text-chocolate'
                     : 'text-cocoa/50 hover:text-chocolate'
@@ -67,6 +67,9 @@ export default function Navbar() {
                     className="absolute -bottom-0.5 left-0 right-0 h-[2px] bg-strawberry rounded-full"
                     transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                   />
+                )}
+                {location.pathname !== link.path && (
+                  <span className="absolute -bottom-0.5 left-0 right-0 h-[2px] bg-strawberry/50 rounded-full origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
                 )}
               </Link>
             ))}

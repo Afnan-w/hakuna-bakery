@@ -41,7 +41,9 @@ export default function Testimonials() {
 
   return (
     <section ref={ref} className="py-16 sm:py-24 px-4 sm:px-8 bg-vanilla/60 relative overflow-hidden">
-      <div className="max-w-4xl mx-auto">
+      <div className="pointer-events-none absolute -top-20 -left-20 w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-strawberry/15 blur-3xl animate-blob" aria-hidden="true" />
+      <div className="pointer-events-none absolute -bottom-20 -right-20 w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-pistachio/20 blur-3xl animate-blob" style={{ animationDelay: '4s' }} aria-hidden="true" />
+      <div className="max-w-4xl mx-auto relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}

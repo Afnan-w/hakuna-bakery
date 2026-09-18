@@ -71,7 +71,7 @@ export default function HowItWorks() {
                 transition={{ delay: 0.2 + i * 0.15, type: 'spring', stiffness: 100, damping: 15 }}
                 className="text-center relative"
               >
-                <div className={`inline-flex w-16 h-16 sm:w-20 sm:h-20 rounded-full ${step.bg} items-center justify-center mb-5 relative z-10`}>
+                <div className={`inline-flex w-16 h-16 sm:w-20 sm:h-20 rounded-full ${step.bg} items-center justify-center mb-5 relative z-10 transition-transform duration-300 hover:scale-110 hover:-rotate-6 shadow-[0_8px_24px_rgba(255,140,168,0.15)]`}>
                   <step.icon size={28} className={step.color} strokeWidth={1.5} />
                   <span className="absolute -top-1 -right-1 text-[10px] font-mono font-bold text-cocoa/30 bg-cream rounded-full w-6 h-6 flex items-center justify-center border border-butter">
                     {step.step}
