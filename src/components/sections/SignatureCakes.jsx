@@ -77,11 +77,11 @@ export default function SignatureCakes() {
                 </div>
               )}
 
-              <div className="aspect-square w-full flex items-center justify-center bg-white rounded-2xl border border-blush-pink/50 group-hover:border-hello-pink/40 shadow-sm group-hover:shadow-md group-hover:shadow-hello-pink/10 transition-all duration-300 overflow-hidden">
+              <div className="aspect-square w-full flex items-center justify-center overflow-hidden">
                 <img
                   src={cake.src}
                   alt={`Hakuna Potata ${cake.name}`}
-                  className="w-full h-full object-contain filter drop-shadow-[0_4px_8px_rgba(0,0,0,0.06)] group-hover:drop-shadow-[0_8px_16px_rgba(255,158,181,0.12)] group-hover:scale-105 transition-all duration-300"
+                  className="w-full h-full object-contain transition-all duration-300 group-hover:opacity-80"
                   loading="lazy"
                 />
               </div>
