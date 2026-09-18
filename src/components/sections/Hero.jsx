@@ -2,24 +2,24 @@ import { motion, useInView, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
-import { ButtercreamFlowerSvg } from '../decorative/FloatingElements'
+import { ButtercreamFlowerSvg, StrawberrySvg } from '../decorative/FloatingElements'
 
 const heroWords = ['Artisan', 'Bakery', '&', 'Custom', 'Cake', 'Studio']
 
 const containerVariants = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.1, delayChildren: 0.2 },
+    transition: { staggerChildren: 0.08, delayChildren: 0.1 },
   },
 }
 
 const wordVariants = {
-  hidden: { opacity: 0, y: 60, rotateX: -40 },
+  hidden: { opacity: 0, y: 40, rotateX: -30 },
   visible: {
     opacity: 1,
     y: 0,
     rotateX: 0,
-    transition: { type: 'spring', stiffness: 80, damping: 12, duration: 0.7 },
+    transition: { type: 'spring', stiffness: 80, damping: 12, duration: 0.6 },
   },
 }
 
@@ -27,28 +27,27 @@ export default function Hero() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
   const { scrollY } = useScroll()
-  const y1 = useTransform(scrollY, [0, 600], [0, -50])
-  const y2 = useTransform(scrollY, [0, 600], [0, -100])
+  const y1 = useTransform(scrollY, [0, 400], [0, -30])
+  const y2 = useTransform(scrollY, [0, 400], [0, -60])
 
   return (
     <section ref={ref} className="relative w-full overflow-hidden">
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-        <div className="absolute -top-40 -left-32 w-[500px] h-[500px] sm:w-[600px] sm:h-[600px] rounded-full bg-hello-pink/8 blur-[120px] animate-blob" />
-        <div className="absolute top-1/3 -right-32 w-[450px] h-[450px] sm:w-[550px] sm:h-[550px] rounded-full bg-hot-pink/5 blur-[100px] animate-blob" style={{ animationDelay: '4s' }} />
-        <div className="absolute -bottom-40 left-1/4 w-[400px] h-[400px] sm:w-[500px] sm:h-[500px] rounded-full bg-blush-pink/10 blur-[100px] animate-blob" style={{ animationDelay: '8s' }} />
+        <div className="absolute -top-32 -left-24 w-[400px] h-[400px] sm:w-[500px] sm:h-[500px] rounded-full bg-hello-pink/8 blur-[100px] animate-blob" />
+        <div className="absolute top-1/3 -right-24 w-[350px] h-[350px] sm:w-[450px] sm:h-[450px] rounded-full bg-blush-pink/10 blur-[80px] animate-blob" style={{ animationDelay: '4s' }} />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 py-16 sm:py-20 lg:py-28 relative">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 relative">
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
           <div className="flex-1 text-center lg:text-left">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-blush-pink mb-8 shadow-sm"
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-sm border border-blush-pink mb-5 shadow-sm"
             >
-              <span className="text-hello-pink text-lg">&#10022;</span>
-              <span className="text-[11px] font-body font-semibold tracking-[0.2em] uppercase text-hello-pink/80">
+              <span className="text-hello-pink text-sm">&#10022;</span>
+              <span className="text-[10px] sm:text-[11px] font-body font-semibold tracking-[0.2em] uppercase text-hello-pink/80">
                 Handcrafted in Dhaka
               </span>
             </motion.div>
@@ -59,13 +58,13 @@ export default function Hero() {
               animate={isInView ? 'visible' : 'hidden'}
               className="overflow-hidden"
             >
-              <h1 className="font-display font-bold text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[5.25rem] leading-[1.04] tracking-tight text-charcoal perspective-[800px]">
+              <h1 className="font-display font-bold text-[2rem] sm:text-5xl md:text-6xl lg:text-[3.75rem] leading-[1.08] tracking-tight text-charcoal perspective-[800px]">
                 {heroWords.map((word, i) => (
                   <motion.span
                     key={i}
                     variants={wordVariants}
                     className={`inline-block mr-[0.3em] ${
-                      word === '&' ? 'text-hello-pink italic font-normal' : ''
+                      word === '&' ? 'font-accent text-hello-pink text-[0.85em]' : ''
                     }`}
                   >
                     {word}
@@ -75,31 +74,31 @@ export default function Hero() {
             </motion.div>
 
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.9, duration: 0.6 }}
-              className="mt-7 text-muted-text text-base sm:text-lg max-w-lg mx-auto lg:mx-0 leading-relaxed"
+              transition={{ delay: 0.7, duration: 0.5 }}
+              className="mt-4 text-muted-text text-sm sm:text-base max-w-lg mx-auto lg:mx-0 leading-relaxed"
             >
               Bespoke Korean Bento cakes, Vintage Lambeth piping, and celebration
               multi-tier cake towers — every bite handcrafted with love.
             </motion.p>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 1.1, duration: 0.6 }}
-              className="mt-10 flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start"
+              transition={{ delay: 0.9, duration: 0.5 }}
+              className="mt-6 flex flex-col sm:flex-row items-center gap-3 justify-center lg:justify-start"
             >
               <Link
                 to="/order"
-                className="btn-shine inline-flex items-center gap-2.5 px-8 py-4 bg-gradient-to-r from-hello-pink to-hot-pink text-white rounded-full text-sm font-body font-bold tracking-wide hover:from-hot-pink hover:to-deep-rose active:scale-[0.97] transition-all duration-300 shadow-xl shadow-hello-pink/25 hover:shadow-2xl hover:shadow-hot-pink/35"
+                className="btn-shine inline-flex items-center gap-2 px-7 py-3 bg-gradient-to-r from-hello-pink to-deep-rose text-white rounded-full text-sm font-body font-bold tracking-wide hover:from-deep-rose hover:to-deep-rose active:scale-[0.97] transition-all duration-300 shadow-xl shadow-hello-pink/25 hover:shadow-2xl hover:shadow-deep-rose/30"
               >
                 Order Your Cake
-                <ArrowRight size={16} />
+                <ArrowRight size={15} />
               </Link>
               <Link
                 to="/gallery"
-                className="inline-flex items-center gap-2.5 px-8 py-4 bg-white text-charcoal border border-blush-pink rounded-full text-sm font-body font-bold tracking-wide hover:bg-soft-pink hover:border-hello-pink/40 active:scale-[0.97] transition-all duration-300 shadow-sm"
+                className="inline-flex items-center gap-2 px-7 py-3 bg-white text-charcoal border border-blush-pink rounded-full text-sm font-body font-bold tracking-wide hover:bg-soft-pink hover:border-hello-pink/40 active:scale-[0.97] transition-all duration-300 shadow-sm"
               >
                 View Gallery
               </Link>
@@ -107,15 +106,15 @@ export default function Hero() {
           </div>
 
           <div className="flex-1 relative">
-            <div className="flex items-start gap-5 sm:gap-8 justify-center">
+            <div className="flex items-start gap-4 sm:gap-6 justify-center">
               <motion.div
                 style={{ y: y1 }}
-                initial={{ opacity: 0, scale: 0.9, y: 40 }}
+                initial={{ opacity: 0, scale: 0.9, y: 30 }}
                 animate={isInView ? { opacity: 1, scale: 1, y: 0 } : {}}
-                transition={{ delay: 0.4, duration: 0.8, ease: 'easeOut' }}
-                className="w-[45%] max-w-[260px]"
+                transition={{ delay: 0.3, duration: 0.7, ease: 'easeOut' }}
+                className="w-[42%] max-w-[220px]"
               >
-                <div className="relative p-3 arch-shape bg-gradient-to-b from-hello-pink/20 to-blush-pink/20 shadow-[0_24px_60px_rgba(255,133,162,0.12)]">
+                <div className="relative p-2.5 arch-shape bg-gradient-to-b from-hello-pink/20 to-blush-pink/20 shadow-[0_20px_50px_rgba(255,158,181,0.12)]">
                   <div className="p-1.5 arch-shape bg-white">
                     <div className="arch-shape overflow-hidden aspect-[4/5] bg-soft-pink">
                       <img
@@ -127,19 +126,19 @@ export default function Hero() {
                     </div>
                   </div>
                 </div>
-                <p className="mt-4 text-center text-[10px] sm:text-xs font-body font-semibold tracking-[0.2em] uppercase text-muted-text/60">
+                <p className="mt-3 text-center text-[9px] sm:text-[10px] font-body font-semibold tracking-[0.2em] uppercase text-muted-text/60">
                   Handcrafted Cookies
                 </p>
               </motion.div>
 
               <motion.div
                 style={{ y: y2 }}
-                initial={{ opacity: 0, scale: 0.9, y: 40 }}
+                initial={{ opacity: 0, scale: 0.9, y: 30 }}
                 animate={isInView ? { opacity: 1, scale: 1, y: 0 } : {}}
-                transition={{ delay: 0.6, duration: 0.8, ease: 'easeOut' }}
-                className="w-[45%] max-w-[260px] mt-10 sm:mt-16"
+                transition={{ delay: 0.5, duration: 0.7, ease: 'easeOut' }}
+                className="w-[42%] max-w-[220px] mt-8 sm:mt-12"
               >
-                <div className="relative p-3 arch-shape bg-gradient-to-b from-blush-pink/25 to-hot-pink/10 shadow-[0_24px_60px_rgba(255,133,162,0.1)]">
+                <div className="relative p-2.5 arch-shape bg-gradient-to-b from-blush-pink/25 to-hot-pink/10 shadow-[0_20px_50px_rgba(255,158,181,0.1)]">
                   <div className="p-1.5 arch-shape bg-white">
                     <div className="arch-shape overflow-hidden aspect-[4/5] bg-soft-pink">
                       <img
@@ -151,7 +150,7 @@ export default function Hero() {
                     </div>
                   </div>
                 </div>
-                <p className="mt-4 text-center text-[10px] sm:text-xs font-body font-semibold tracking-[0.2em] uppercase text-muted-text/60">
+                <p className="mt-3 text-center text-[9px] sm:text-[10px] font-body font-semibold tracking-[0.2em] uppercase text-muted-text/60">
                   Fresh Danishes & Bakes
                 </p>
               </motion.div>
@@ -159,11 +158,19 @@ export default function Hero() {
 
             <motion.div
               initial={{ opacity: 0, scale: 0 }}
-              animate={isInView ? { opacity: 0.6, scale: 1 } : {}}
-              transition={{ delay: 1.2, duration: 0.5, type: 'spring' }}
-              className="absolute -top-6 -right-2 sm:right-6"
+              animate={isInView ? { opacity: 0.5, scale: 1 } : {}}
+              transition={{ delay: 1, duration: 0.4, type: 'spring' }}
+              className="absolute -top-4 right-0 sm:right-4"
             >
-              <ButtercreamFlowerSvg className="w-14 h-14 sm:w-20 sm:h-20" />
+              <ButtercreamFlowerSvg className="w-10 h-10 sm:w-16 sm:h-16" />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              animate={isInView ? { opacity: 0.4, scale: 1 } : {}}
+              transition={{ delay: 1.2, duration: 0.4, type: 'spring' }}
+              className="absolute bottom-4 -left-2 sm:left-4"
+            >
+              <StrawberrySvg className="w-8 h-8 sm:w-12 sm:h-12" />
             </motion.div>
           </div>
         </div>

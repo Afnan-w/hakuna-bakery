@@ -140,7 +140,7 @@ export default function GalleryPage() {
                   <img
                     src="/badge-best-seller.webp"
                     alt="Best Selling Badge"
-                    className="absolute inset-0 w-full h-full object-contain drop-shadow-[0_4px_10px_rgba(255,133,162,0.3)]"
+                    className="absolute inset-0 w-full h-full object-contain drop-shadow-[0_4px_10px_rgba(255,158,181,0.3)]"
                     loading="lazy"
                   />
                   <span className="relative z-10 text-[8px] sm:text-[9px] font-body font-black tracking-tight uppercase text-white text-center leading-[1.05] px-1 transform -rotate-6">
@@ -153,7 +153,7 @@ export default function GalleryPage() {
                 <img
                   src={cake.src}
                   alt={`Hakuna Potata ${cake.name}`}
-                  className="w-full h-full object-contain filter drop-shadow-[0_4px_8px_rgba(0,0,0,0.06)] group-hover:drop-shadow-[0_8px_16px_rgba(255,133,162,0.12)] group-hover:scale-105 transition-all duration-300"
+                  className="w-full h-full object-contain filter drop-shadow-[0_4px_8px_rgba(0,0,0,0.06)] group-hover:drop-shadow-[0_8px_16px_rgba(255,158,181,0.12)] group-hover:scale-105 transition-all duration-300"
                   loading="lazy"
                 />
               </div>

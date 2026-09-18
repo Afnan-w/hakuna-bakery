@@ -33,7 +33,7 @@ export default function Navbar() {
         transition={{ type: 'spring', stiffness: 100, damping: 20, delay: 0.1 }}
         className={`sticky top-0 z-50 w-full transition-all duration-500 ${
           scrolled
-            ? 'bg-white/95 backdrop-blur-xl shadow-[0_1px_30px_rgba(255,133,162,0.08)] border-b border-blush-pink/50'
+            ? 'bg-white/95 backdrop-blur-xl shadow-[0_1px_30px_rgba(255,158,181,0.08)] border-b border-blush-pink/50'
             : 'bg-white/70 backdrop-blur-md'
         }`}
       >
@@ -92,7 +92,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="fixed top-16 left-0 right-0 z-40 bg-white/98 backdrop-blur-xl border-b border-blush-pink/50 shadow-[0_10px_40px_rgba(255,133,162,0.1)] overflow-hidden md:hidden"
+            className="fixed top-16 left-0 right-0 z-40 bg-white/98 backdrop-blur-xl border-b border-blush-pink/50 shadow-[0_10px_40px_rgba(255,158,181,0.1)] overflow-hidden md:hidden"
           >
             <nav className="flex flex-col items-center gap-1 py-4 px-6">
               {navLinks.map((link, i) => (

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useCallback } from 'react'
 
 const PARTICLE_COUNT = 30
-const COLORS = ['#FF85A2', '#FFD6E0', '#FF5A8A', '#E84578', '#FFB6C1']
+const COLORS = ['#FF9EB5', '#FFD1DC', '#E8899E', '#C41E3A', '#FFB8C9']
 
 function createParticle(canvas) {
   return {

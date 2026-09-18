@@ -97,7 +97,7 @@ export default function AboutPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="relative p-2 sm:p-2.5 arch-shape border-[1.5px] border-hello-pink/25 bg-white shadow-[0_20px_50px_rgba(255,133,162,0.08)] max-w-sm mx-auto">
+              <div className="relative p-2 sm:p-2.5 arch-shape border-[1.5px] border-hello-pink/25 bg-white shadow-[0_20px_50px_rgba(255,158,181,0.08)] max-w-sm mx-auto">
                 <div className="p-1 sm:p-1.5 arch-shape border border-blush-pink bg-soft-pink">
                   <div className="arch-shape overflow-hidden aspect-[4/5] bg-white">
                     <img
