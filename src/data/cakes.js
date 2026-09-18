@@ -1,0 +1,17 @@
+export const cakes = [
+  { id: 1, name: "Cake 01", src: "/cakes/cake-01.webp", category: "celebration" },
+  { id: 2, name: "Cake 02", src: "/cakes/cake-02.webp", category: "bento" },
+  { id: 3, name: "Cake 03", src: "/cakes/cake-03.webp", category: "celebration", isBestSeller: true },
+  { id: 4, name: "Cake 04", src: "/cakes/cake-04.webp", category: "bento" },
+  { id: 5, name: "Cake 05", src: "/cakes/cake-05.webp", category: "multi-tier" },
+  { id: 6, name: "Cake 06", src: "/cakes/cake-06.webp", category: "celebration" },
+  { id: 7, name: "Cake 07", src: "/cakes/cake-07.webp", category: "bento", isBestSeller: true },
+  { id: 8, name: "Cake 08", src: "/cakes/cake-08.webp", category: "celebration" },
+  { id: 9, name: "Cake 09", src: "/cakes/cake-09.webp", category: "multi-tier" },
+  { id: 10, name: "Cake 10", src: "/cakes/cake-10.webp", category: "bento" },
+  { id: 11, name: "Cake 11", src: "/cakes/cake-11.webp", category: "celebration" },
+  { id: 12, name: "Cake 12", src: "/cakes/cake-12.webp", category: "multi-tier", isBestSeller: true },
+  { id: 13, name: "Cake 13", src: "/cakes/cake-13.webp", category: "bento" },
+  { id: 14, name: "Cake 14", src: "/cakes/cake-14.webp", category: "celebration" },
+  { id: 15, name: "Coming Soon", src: "/cakes/cake-coming-soon.webp", category: "special" },
+];
