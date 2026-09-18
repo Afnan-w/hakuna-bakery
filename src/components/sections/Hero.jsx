@@ -33,9 +33,9 @@ export default function Hero() {
   return (
     <section ref={ref} className="relative w-full overflow-hidden">
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-        <div className="absolute -top-40 -left-32 w-[500px] h-[500px] sm:w-[600px] sm:h-[600px] rounded-full bg-gold/5 blur-[120px] animate-blob" />
-        <div className="absolute top-1/3 -right-32 w-[450px] h-[450px] sm:w-[550px] sm:h-[550px] rounded-full bg-rose-accent/4 blur-[100px] animate-blob" style={{ animationDelay: '4s' }} />
-        <div className="absolute -bottom-40 left-1/4 w-[400px] h-[400px] sm:w-[500px] sm:h-[500px] rounded-full bg-gold/4 blur-[100px] animate-blob" style={{ animationDelay: '8s' }} />
+        <div className="absolute -top-40 -left-32 w-[500px] h-[500px] sm:w-[600px] sm:h-[600px] rounded-full bg-hello-pink/8 blur-[120px] animate-blob" />
+        <div className="absolute top-1/3 -right-32 w-[450px] h-[450px] sm:w-[550px] sm:h-[550px] rounded-full bg-hot-pink/5 blur-[100px] animate-blob" style={{ animationDelay: '4s' }} />
+        <div className="absolute -bottom-40 left-1/4 w-[400px] h-[400px] sm:w-[500px] sm:h-[500px] rounded-full bg-blush-pink/10 blur-[100px] animate-blob" style={{ animationDelay: '8s' }} />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-8 py-16 sm:py-20 lg:py-28 relative">
@@ -45,10 +45,10 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-warm-brown/60 backdrop-blur-sm border border-gold/15 mb-8 shadow-sm"
+              className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-blush-pink mb-8 shadow-sm"
             >
-              <span className="text-gold text-lg">&#10022;</span>
-              <span className="text-[11px] font-body font-semibold tracking-[0.2em] uppercase text-gold/80">
+              <span className="text-hello-pink text-lg">&#10022;</span>
+              <span className="text-[11px] font-body font-semibold tracking-[0.2em] uppercase text-hello-pink/80">
                 Handcrafted in Dhaka
               </span>
             </motion.div>
@@ -59,13 +59,13 @@ export default function Hero() {
               animate={isInView ? 'visible' : 'hidden'}
               className="overflow-hidden"
             >
-              <h1 className="font-display font-bold text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[5.25rem] leading-[1.04] tracking-tight text-champagne perspective-[800px]">
+              <h1 className="font-display font-bold text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[5.25rem] leading-[1.04] tracking-tight text-charcoal perspective-[800px]">
                 {heroWords.map((word, i) => (
                   <motion.span
                     key={i}
                     variants={wordVariants}
                     className={`inline-block mr-[0.3em] ${
-                      word === '&' ? 'text-gold italic font-normal' : ''
+                      word === '&' ? 'text-hello-pink italic font-normal' : ''
                     }`}
                   >
                     {word}
@@ -78,7 +78,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.9, duration: 0.6 }}
-              className="mt-7 text-muted-cream text-base sm:text-lg max-w-lg mx-auto lg:mx-0 leading-relaxed"
+              className="mt-7 text-muted-text text-base sm:text-lg max-w-lg mx-auto lg:mx-0 leading-relaxed"
             >
               Bespoke Korean Bento cakes, Vintage Lambeth piping, and celebration
               multi-tier cake towers — every bite handcrafted with love.
@@ -92,14 +92,14 @@ export default function Hero() {
             >
               <Link
                 to="/order"
-                className="btn-shine inline-flex items-center gap-2.5 px-8 py-4 bg-gradient-to-r from-gold to-gold-dark text-deep-espresso rounded-full text-sm font-body font-bold tracking-wide hover:from-gold-light hover:to-gold active:scale-[0.97] transition-all duration-300 shadow-xl shadow-gold/20 hover:shadow-2xl hover:shadow-gold/30"
+                className="btn-shine inline-flex items-center gap-2.5 px-8 py-4 bg-gradient-to-r from-hello-pink to-hot-pink text-white rounded-full text-sm font-body font-bold tracking-wide hover:from-hot-pink hover:to-deep-rose active:scale-[0.97] transition-all duration-300 shadow-xl shadow-hello-pink/25 hover:shadow-2xl hover:shadow-hot-pink/35"
               >
                 Order Your Cake
                 <ArrowRight size={16} />
               </Link>
               <Link
                 to="/gallery"
-                className="inline-flex items-center gap-2.5 px-8 py-4 bg-transparent text-champagne border border-gold/25 rounded-full text-sm font-body font-bold tracking-wide hover:bg-gold/5 hover:border-gold/40 active:scale-[0.97] transition-all duration-300"
+                className="inline-flex items-center gap-2.5 px-8 py-4 bg-white text-charcoal border border-blush-pink rounded-full text-sm font-body font-bold tracking-wide hover:bg-soft-pink hover:border-hello-pink/40 active:scale-[0.97] transition-all duration-300 shadow-sm"
               >
                 View Gallery
               </Link>
@@ -115,19 +115,19 @@ export default function Hero() {
                 transition={{ delay: 0.4, duration: 0.8, ease: 'easeOut' }}
                 className="w-[45%] max-w-[260px]"
               >
-                <div className="relative p-3 arch-shape bg-gradient-to-b from-gold/20 to-gold/5 shadow-[0_24px_60px_rgba(200,169,110,0.12)]">
-                  <div className="p-1.5 arch-shape bg-dark-cocoa">
-                    <div className="arch-shape overflow-hidden aspect-[4/5] bg-warm-brown">
+                <div className="relative p-3 arch-shape bg-gradient-to-b from-hello-pink/20 to-blush-pink/20 shadow-[0_24px_60px_rgba(255,133,162,0.12)]">
+                  <div className="p-1.5 arch-shape bg-white">
+                    <div className="arch-shape overflow-hidden aspect-[4/5] bg-soft-pink">
                       <img
                         src="/hakuna-cookies.webp"
                         alt="Hakuna Potata Artisan Cookies"
-                        className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
+                        className="w-full h-full object-cover hero-img-zoom"
                         loading="eager"
                       />
                     </div>
                   </div>
                 </div>
-                <p className="mt-4 text-center text-[10px] sm:text-xs font-body font-semibold tracking-[0.2em] uppercase text-muted-cream/60">
+                <p className="mt-4 text-center text-[10px] sm:text-xs font-body font-semibold tracking-[0.2em] uppercase text-muted-text/60">
                   Handcrafted Cookies
                 </p>
               </motion.div>
@@ -139,19 +139,19 @@ export default function Hero() {
                 transition={{ delay: 0.6, duration: 0.8, ease: 'easeOut' }}
                 className="w-[45%] max-w-[260px] mt-10 sm:mt-16"
               >
-                <div className="relative p-3 arch-shape bg-gradient-to-b from-rose-accent/15 to-gold/5 shadow-[0_24px_60px_rgba(196,120,122,0.1)]">
-                  <div className="p-1.5 arch-shape bg-dark-cocoa">
-                    <div className="arch-shape overflow-hidden aspect-[4/5] bg-warm-brown">
+                <div className="relative p-3 arch-shape bg-gradient-to-b from-blush-pink/25 to-hot-pink/10 shadow-[0_24px_60px_rgba(255,133,162,0.1)]">
+                  <div className="p-1.5 arch-shape bg-white">
+                    <div className="arch-shape overflow-hidden aspect-[4/5] bg-soft-pink">
                       <img
                         src="/hakuna-bakery.webp"
                         alt="Hakuna Potata Artisan Viennoiserie"
-                        className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
+                        className="w-full h-full object-cover hero-img-zoom"
                         loading="eager"
                       />
                     </div>
                   </div>
                 </div>
-                <p className="mt-4 text-center text-[10px] sm:text-xs font-body font-semibold tracking-[0.2em] uppercase text-muted-cream/60">
+                <p className="mt-4 text-center text-[10px] sm:text-xs font-body font-semibold tracking-[0.2em] uppercase text-muted-text/60">
                   Fresh Danishes & Bakes
                 </p>
               </motion.div>
@@ -159,7 +159,7 @@ export default function Hero() {
 
             <motion.div
               initial={{ opacity: 0, scale: 0 }}
-              animate={isInView ? { opacity: 0.5, scale: 1 } : {}}
+              animate={isInView ? { opacity: 0.6, scale: 1 } : {}}
               transition={{ delay: 1.2, duration: 0.5, type: 'spring' }}
               className="absolute -top-6 -right-2 sm:right-6"
             >

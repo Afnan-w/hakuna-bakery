@@ -64,12 +64,12 @@ export default function GalleryPage() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
-      className="min-h-screen bg-deep-espresso"
+      className="min-h-screen bg-cream"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-8 pt-8 sm:pt-12">
         <Link
           to="/"
-          className="inline-flex items-center gap-2 text-xs font-body font-semibold text-muted-cream/50 hover:text-champagne transition-colors mb-6"
+          className="inline-flex items-center gap-2 text-xs font-body font-semibold text-muted-text/50 hover:text-charcoal transition-colors mb-6"
         >
           <ArrowLeft size={14} />
           Back to Home
@@ -78,15 +78,15 @@ export default function GalleryPage() {
         <div className="text-center mb-8 sm:mb-12">
           <div className="inline-flex items-center gap-2 mb-3">
             <StrawberrySvg className="w-5 h-5" />
-            <span className="text-[10px] sm:text-xs font-body font-semibold tracking-[0.3em] uppercase text-gold/50">
+            <span className="text-[10px] sm:text-xs font-body font-semibold tracking-[0.3em] uppercase text-hello-pink/60">
               Our Confections
             </span>
             <StrawberrySvg className="w-5 h-5" />
           </div>
-          <h1 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl text-champagne">
+          <h1 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl text-charcoal">
             Cake Gallery
           </h1>
-          <p className="text-muted-cream text-sm sm:text-base mt-3 max-w-md mx-auto">
+          <p className="text-muted-text text-sm sm:text-base mt-3 max-w-md mx-auto">
             Browse our collection of handcrafted artisan cakes. Each one made with love in Dhaka.
           </p>
         </div>
@@ -98,8 +98,8 @@ export default function GalleryPage() {
               onClick={() => setActiveFilter(cat.id)}
               className={`px-4 sm:px-5 py-2 rounded-full text-xs font-body font-bold tracking-wide transition-all duration-300 cursor-pointer ${
                 activeFilter === cat.id
-                  ? 'bg-gold text-deep-espresso shadow-md shadow-gold/20'
-                  : 'bg-dark-cocoa text-muted-cream border border-warm-brown hover:border-gold/30 hover:text-champagne'
+                  ? 'bg-hello-pink text-white shadow-md shadow-hello-pink/20'
+                  : 'bg-white text-muted-text border border-blush-pink hover:border-hello-pink/30 hover:text-charcoal'
               }`}
             >
               {cat.label}
@@ -123,8 +123,8 @@ export default function GalleryPage() {
               className="col-span-full text-center py-16"
             >
               <StrawberrySvg className="w-10 h-10 mx-auto mb-4 opacity-30" />
-              <p className="font-display font-bold text-lg text-champagne mb-2">No cakes found</p>
-              <p className="text-muted-cream/50 text-sm">Try selecting a different category above.</p>
+              <p className="font-display font-bold text-lg text-charcoal mb-2">No cakes found</p>
+              <p className="text-muted-text/50 text-sm">Try selecting a different category above.</p>
             </motion.div>
           )}
           {filtered.map((cake, idx) => (
@@ -140,24 +140,24 @@ export default function GalleryPage() {
                   <img
                     src="/badge-best-seller.webp"
                     alt="Best Selling Badge"
-                    className="absolute inset-0 w-full h-full object-contain drop-shadow-[0_4px_10px_rgba(200,169,110,0.3)]"
+                    className="absolute inset-0 w-full h-full object-contain drop-shadow-[0_4px_10px_rgba(255,133,162,0.3)]"
                     loading="lazy"
                   />
-                  <span className="relative z-10 text-[8px] sm:text-[9px] font-body font-black tracking-tight uppercase text-deep-espresso text-center leading-[1.05] px-1 transform -rotate-6">
+                  <span className="relative z-10 text-[8px] sm:text-[9px] font-body font-black tracking-tight uppercase text-white text-center leading-[1.05] px-1 transform -rotate-6">
                     Best<br />Selling
                   </span>
                 </div>
               )}
 
-              <div className="aspect-square w-full flex items-center justify-center bg-dark-cocoa/40 rounded-2xl border border-gold/5 group-hover:border-gold/20 transition-all duration-300 overflow-hidden">
+              <div className="aspect-square w-full flex items-center justify-center bg-white rounded-2xl border border-blush-pink/50 group-hover:border-hello-pink/40 shadow-sm group-hover:shadow-md group-hover:shadow-hello-pink/10 transition-all duration-300 overflow-hidden">
                 <img
                   src={cake.src}
                   alt={`Hakuna Potata ${cake.name}`}
-                  className="w-full h-full object-contain filter drop-shadow-[0_8px_16px_rgba(0,0,0,0.3)] group-hover:drop-shadow-[0_12px_24px_rgba(200,169,110,0.12)] group-hover:scale-105 transition-all duration-300"
+                  className="w-full h-full object-contain filter drop-shadow-[0_4px_8px_rgba(0,0,0,0.06)] group-hover:drop-shadow-[0_8px_16px_rgba(255,133,162,0.12)] group-hover:scale-105 transition-all duration-300"
                   loading="lazy"
                 />
               </div>
-              <span className="mt-2 text-xs font-body font-semibold text-muted-cream/60 group-hover:text-champagne transition-colors text-center">
+              <span className="mt-2 text-xs font-body font-semibold text-muted-text/60 group-hover:text-charcoal transition-colors text-center">
                 {cake.name}
               </span>
             </motion.div>
@@ -170,12 +170,12 @@ export default function GalleryPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-3 sm:p-6"
+          className="fixed inset-0 z-50 bg-black/70 backdrop-blur-md flex items-center justify-center p-3 sm:p-6"
           onClick={() => setLightbox(null)}
         >
           <button
             onClick={() => setLightbox(null)}
-            className="absolute top-4 right-4 text-white/50 hover:text-white text-sm font-body cursor-pointer z-50"
+            className="absolute top-4 right-4 text-white/60 hover:text-white text-sm font-body cursor-pointer z-50"
             aria-label="Close lightbox"
           >
             Close &times;
@@ -185,7 +185,7 @@ export default function GalleryPage() {
             <div className="w-full flex items-center justify-between px-2 pb-2">
               <button
                 onClick={() => handleLightboxNav(-1)}
-                className="text-white/40 hover:text-gold text-sm font-body cursor-pointer px-3 py-1 transition-colors"
+                className="text-white/50 hover:text-hello-pink text-sm font-body cursor-pointer px-3 py-1 transition-colors"
                 aria-label="Previous cake"
               >
                 &larr; Prev
@@ -195,7 +195,7 @@ export default function GalleryPage() {
               </span>
               <button
                 onClick={() => handleLightboxNav(1)}
-                className="text-white/40 hover:text-gold text-sm font-body cursor-pointer px-3 py-1 transition-colors"
+                className="text-white/50 hover:text-hello-pink text-sm font-body cursor-pointer px-3 py-1 transition-colors"
                 aria-label="Next cake"
               >
                 Next &rarr;
@@ -211,7 +211,7 @@ export default function GalleryPage() {
               alt={filtered[lightbox].name}
               className="w-full max-h-[75vh] object-contain rounded-xl"
             />
-            <p className="text-white/50 text-sm font-body mt-3 text-center">
+            <p className="text-white/60 text-sm font-body mt-3 text-center">
               {filtered[lightbox].name}
             </p>
           </div>

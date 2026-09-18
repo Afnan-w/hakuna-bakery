@@ -26,7 +26,7 @@ export default function HomePage() {
       <SignatureCakes />
       <WaveDivider />
       <Marquee
-        tone="dark"
+        tone="white"
         reverse
         items={[
           'Order Online',

@@ -82,14 +82,14 @@ export default function OrderPage() {
 
   if (order) {
     return (
-      <motion.div {...pageTransition} className="min-h-screen bg-deep-espresso">
+      <motion.div {...pageTransition} className="min-h-screen bg-cream">
         <div className="max-w-5xl mx-auto px-4 sm:px-8 py-6 sm:py-10">
           <div className="mb-6 flex items-center justify-between">
-            <Link to="/" className="inline-flex items-center gap-2 text-xs sm:text-sm font-body font-semibold text-muted-cream/50 hover:text-champagne transition-colors">
+            <Link to="/" className="inline-flex items-center gap-2 text-xs sm:text-sm font-body font-semibold text-muted-text/50 hover:text-charcoal transition-colors">
               <ArrowLeft size={14} />
               Back to Bakery Home
             </Link>
-            <span className="text-[11px] font-mono uppercase tracking-widest text-gold/30">
+            <span className="text-[11px] font-mono uppercase tracking-widest text-hello-pink/40">
               Hakuna Potata Custom Studio
             </span>
           </div>
@@ -98,24 +98,24 @@ export default function OrderPage() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="bg-dark-cocoa rounded-3xl p-6 sm:p-10 border border-gold/15 shadow-xl max-w-2xl mx-auto"
+            className="bg-white rounded-3xl p-6 sm:p-10 border border-blush-pink shadow-xl max-w-2xl mx-auto"
           >
-            <div className="w-16 h-16 rounded-full bg-gold/10 text-gold flex items-center justify-center mx-auto mb-5">
+            <div className="w-16 h-16 rounded-full bg-hello-pink/10 text-hello-pink flex items-center justify-center mx-auto mb-5">
               <Check size={32} />
             </div>
             <div className="text-center mb-8">
-              <span className="text-[11px] font-body font-semibold tracking-[0.25em] uppercase text-gold">
+              <span className="text-[11px] font-body font-semibold tracking-[0.25em] uppercase text-hello-pink">
                 Order Logged Successfully
               </span>
-              <h2 className="text-2xl sm:text-3xl font-display font-bold text-champagne mt-1">
+              <h2 className="text-2xl sm:text-3xl font-display font-bold text-charcoal mt-1">
                 Thank You, {order.name}!
               </h2>
-              <p className="text-muted-cream text-xs sm:text-sm mt-2 max-w-md mx-auto leading-relaxed">
-                Your custom cake inquiry <span className="font-mono font-bold text-gold">#{order.orderId}</span> has been prepared. Click below to confirm directly with our bakers on WhatsApp!
+              <p className="text-muted-text text-xs sm:text-sm mt-2 max-w-md mx-auto leading-relaxed">
+                Your custom cake inquiry <span className="font-mono font-bold text-hello-pink">#{order.orderId}</span> has been prepared. Click below to confirm directly with our bakers on WhatsApp!
               </p>
             </div>
 
-            <div className="bg-warm-brown/40 rounded-2xl p-5 border border-gold/10 text-xs sm:text-sm space-y-3 mb-6">
+            <div className="bg-soft-pink rounded-2xl p-5 border border-blush-pink text-xs sm:text-sm space-y-3 mb-6">
               {[
                 ['Cake Size', `${order.sizeName} (${order.diameterSpec})`],
                 ['Portions', order.servings],
@@ -128,14 +128,14 @@ export default function OrderPage() {
                 ['Delivery Fee', `\u09F3${order.deliveryCost}`],
                 ['Schedule', `${order.date} at ${order.time}`],
               ].map(([label, value]) => (
-                <div key={label} className="flex justify-between py-1 border-b border-gold/10 items-center">
-                  <span className="text-muted-cream/60">{label}</span>
-                  <span className="font-bold text-champagne">{value}</span>
+                <div key={label} className="flex justify-between py-1 border-b border-blush-pink items-center">
+                  <span className="text-muted-text/60">{label}</span>
+                  <span className="font-bold text-charcoal">{value}</span>
                 </div>
               ))}
-              <div className="flex justify-between pt-2 text-base font-bold text-champagne">
+              <div className="flex justify-between pt-2 text-base font-bold text-charcoal">
                 <span>Estimated Total</span>
-                <span className="font-mono text-lg text-gold">{'\u09F3'}{order.totalPrice.toLocaleString()}</span>
+                <span className="font-mono text-lg text-hello-pink">{'\u09F3'}{order.totalPrice.toLocaleString()}</span>
               </div>
             </div>
 
@@ -153,7 +153,7 @@ export default function OrderPage() {
               </a>
               <a
                 href="tel:+8801339656675"
-                className="flex-1 flex items-center justify-center gap-2 w-full bg-warm-brown text-champagne border border-gold/15 font-body font-bold text-sm py-3 rounded-xl hover:bg-brown-mid active:scale-[0.97] transition-all"
+                className="flex-1 flex items-center justify-center gap-2 w-full bg-white text-charcoal border border-blush-pink font-body font-bold text-sm py-3 rounded-xl hover:bg-soft-pink active:scale-[0.97] transition-all"
               >
                 <Phone size={16} />
                 Call to Confirm
@@ -166,14 +166,14 @@ export default function OrderPage() {
   }
 
   return (
-    <motion.div {...pageTransition} className="min-h-screen bg-deep-espresso">
+    <motion.div {...pageTransition} className="min-h-screen bg-cream">
       <div className="max-w-5xl mx-auto px-4 sm:px-8 py-6 sm:py-10">
         <div className="mb-6 flex items-center justify-between">
-          <Link to="/" className="inline-flex items-center gap-2 text-xs sm:text-sm font-body font-semibold text-muted-cream/50 hover:text-champagne transition-colors">
+          <Link to="/" className="inline-flex items-center gap-2 text-xs sm:text-sm font-body font-semibold text-muted-text/50 hover:text-charcoal transition-colors">
             <ArrowLeft size={14} />
             Back to Bakery Home
           </Link>
-          <span className="text-[11px] font-mono uppercase tracking-widest text-gold/30">
+          <span className="text-[11px] font-mono uppercase tracking-widest text-hello-pink/40">
             Hakuna Potata Custom Studio
           </span>
         </div>
@@ -188,19 +188,19 @@ export default function OrderPage() {
                 onClick={() => step.p < phase && setPhase(step.p)}
                 className={`w-9 h-9 rounded-full flex items-center justify-center text-xs font-mono font-bold transition-all cursor-pointer shrink-0 ${
                   phase >= step.p
-                    ? 'bg-gold text-deep-espresso'
-                    : 'bg-warm-brown text-muted-cream/40 border border-gold/15'
+                    ? 'bg-hello-pink text-white'
+                    : 'bg-soft-pink text-muted-text/40 border border-blush-pink'
                 } ${step.p < phase ? 'hover:scale-110' : ''}`}
               >
                 {phase > step.p ? <Check size={14} /> : step.p}
               </button>
               <span className={`text-xs font-body font-bold tracking-wider uppercase ml-2 ${
-                phase >= step.p ? 'text-champagne' : 'text-muted-cream/30'
+                phase >= step.p ? 'text-charcoal' : 'text-muted-text/30'
               }`}>
                 {step.label}
               </span>
               {idx === 0 && (
-                <div className={`flex-1 h-[1px] mx-3 rounded-full transition-colors duration-300 ${phase > 1 ? 'bg-gold' : 'bg-warm-brown'}`} />
+                <div className={`flex-1 h-[1px] mx-3 rounded-full transition-colors duration-300 ${phase > 1 ? 'bg-hello-pink' : 'bg-blush-pink'}`} />
               )}
             </div>
           ))}
@@ -215,7 +215,7 @@ export default function OrderPage() {
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.3 }}
             >
-              <h2 className="font-display font-bold text-xl sm:text-2xl text-champagne text-center mb-8">
+              <h2 className="font-display font-bold text-xl sm:text-2xl text-charcoal text-center mb-8">
                 Choose Your Cake Size
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mb-10">
@@ -225,25 +225,25 @@ export default function OrderPage() {
                     whileHover={{ y: -3 }}
                     whileTap={{ scale: 0.97 }}
                     onClick={() => setSelectedSize(s.id)}
-                    className={`relative bg-dark-cocoa rounded-2xl p-5 sm:p-6 border-2 text-left transition-all duration-300 cursor-pointer ${
+                    className={`relative bg-white rounded-2xl p-5 sm:p-6 border-2 text-left transition-all duration-300 cursor-pointer ${
                       selectedSize === s.id
-                        ? 'border-gold shadow-lg shadow-gold/10'
-                        : 'border-warm-brown hover:border-gold/30'
+                        ? 'border-hello-pink shadow-lg shadow-hello-pink/10'
+                        : 'border-blush-pink hover:border-hello-pink/30'
                     }`}
                   >
                     {s.popular && (
-                      <span className="absolute -top-2.5 right-4 bg-gold text-deep-espresso text-[9px] font-body font-bold tracking-wider uppercase px-2.5 py-0.5 rounded-full">
+                      <span className="absolute -top-2.5 right-4 bg-hello-pink text-white text-[9px] font-body font-bold tracking-wider uppercase px-2.5 py-0.5 rounded-full">
                         {s.tag}
                       </span>
                     )}
-                    <h3 className="font-display font-bold text-lg text-champagne">{s.name}</h3>
-                    <p className="text-muted-cream/60 text-xs mt-1">{s.servings}</p>
+                    <h3 className="font-display font-bold text-lg text-charcoal">{s.name}</h3>
+                    <p className="text-muted-text/60 text-xs mt-1">{s.servings}</p>
                     <div className="mt-4 flex items-end justify-between">
-                      <span className="font-mono font-bold text-xl text-gold">
+                      <span className="font-mono font-bold text-xl text-hello-pink">
                         {'\u09F3'}{s.basePrice.toLocaleString()}
                       </span>
                       {!s.popular && (
-                        <span className="text-[10px] font-body font-bold tracking-wider uppercase text-muted-cream/30">
+                        <span className="text-[10px] font-body font-bold tracking-wider uppercase text-muted-text/30">
                           {s.tag}
                         </span>
                       )}
@@ -254,7 +254,7 @@ export default function OrderPage() {
               <div className="text-center">
                 <button
                   onClick={() => setPhase(2)}
-                  className="inline-flex items-center gap-2 px-8 py-3.5 bg-gold text-deep-espresso rounded-full text-sm font-body font-bold tracking-wide hover:bg-gold-light active:scale-[0.97] transition-all duration-300 shadow-lg shadow-gold/20"
+                  className="inline-flex items-center gap-2 px-8 py-3.5 bg-gradient-to-r from-hello-pink to-hot-pink text-white rounded-full text-sm font-body font-bold tracking-wide hover:from-hot-pink hover:to-deep-rose active:scale-[0.97] transition-all duration-300 shadow-lg shadow-hello-pink/20"
                 >
                   Continue to Customize
                 </button>
@@ -278,8 +278,8 @@ export default function OrderPage() {
                         onClick={() => setFlavor(f.id)}
                         className={`p-3 rounded-xl border-2 text-xs font-body font-bold text-center transition-all cursor-pointer ${
                           flavor === f.id
-                            ? 'border-gold bg-warm-brown/60 shadow-sm shadow-gold/10 text-champagne'
-                            : 'border-warm-brown hover:border-gold/30 bg-dark-cocoa text-muted-cream'
+                            ? 'border-hello-pink bg-soft-pink shadow-sm shadow-hello-pink/10 text-charcoal'
+                            : 'border-blush-pink hover:border-hello-pink/30 bg-white text-muted-text'
                         }`}
                       >
                         {f.name}
@@ -296,8 +296,8 @@ export default function OrderPage() {
                         onClick={() => setFilling(f.id)}
                         className={`p-3 rounded-xl border-2 text-xs font-body font-bold text-center transition-all cursor-pointer ${
                           filling === f.id
-                            ? 'border-gold bg-warm-brown/60 shadow-sm shadow-gold/10 text-champagne'
-                            : 'border-warm-brown hover:border-gold/30 bg-dark-cocoa text-muted-cream'
+                            ? 'border-hello-pink bg-soft-pink shadow-sm shadow-hello-pink/10 text-charcoal'
+                            : 'border-blush-pink hover:border-hello-pink/30 bg-white text-muted-text'
                         }`}
                       >
                         {f.name}
@@ -311,7 +311,7 @@ export default function OrderPage() {
                     <button
                       onClick={() => setEggless(false)}
                       className={`flex-1 p-3 rounded-xl border-2 text-xs font-body font-bold text-center transition-all cursor-pointer ${
-                        !eggless ? 'border-gold bg-warm-brown/60 shadow-sm shadow-gold/10 text-champagne' : 'border-warm-brown hover:border-gold/30 bg-dark-cocoa text-muted-cream'
+                        !eggless ? 'border-hello-pink bg-soft-pink shadow-sm shadow-hello-pink/10 text-charcoal' : 'border-blush-pink hover:border-hello-pink/30 bg-white text-muted-text'
                       }`}
                     >
                       Standard Sponge
@@ -319,7 +319,7 @@ export default function OrderPage() {
                     <button
                       onClick={() => setEggless(true)}
                       className={`flex-1 p-3 rounded-xl border-2 text-xs font-body font-bold text-center transition-all cursor-pointer ${
-                        eggless ? 'border-gold bg-warm-brown/60 shadow-sm shadow-gold/10 text-champagne' : 'border-warm-brown hover:border-gold/30 bg-dark-cocoa text-muted-cream'
+                        eggless ? 'border-hello-pink bg-soft-pink shadow-sm shadow-hello-pink/10 text-charcoal' : 'border-blush-pink hover:border-hello-pink/30 bg-white text-muted-text'
                       }`}
                     >
                       100% Pure Eggless (+{'\u09F3'}250)
@@ -334,9 +334,9 @@ export default function OrderPage() {
                     value={inscription}
                     onChange={(e) => setInscription(e.target.value)}
                     placeholder="Happy Birthday..."
-                    className="w-full px-4 py-3 rounded-xl border-2 border-warm-brown bg-dark-cocoa text-sm font-body text-champagne placeholder-muted-cream/30 focus:border-gold focus:outline-none transition-colors"
+                    className="w-full px-4 py-3 rounded-xl border-2 border-blush-pink bg-white text-sm font-body text-charcoal placeholder-muted-text/30 focus:border-hello-pink focus:outline-none transition-colors"
                   />
-                  <span className="text-[10px] font-mono text-muted-cream/30 mt-1 block text-right">
+                  <span className="text-[10px] font-mono text-muted-text/30 mt-1 block text-right">
                     {inscription.length}/40
                   </span>
                 </FormSection>
@@ -349,8 +349,8 @@ export default function OrderPage() {
                         onClick={() => setAccentColor(c.id)}
                         className={`flex items-center gap-2 px-4 py-2.5 rounded-xl border-2 text-xs font-body font-bold transition-all cursor-pointer ${
                           accentColor === c.id
-                            ? 'border-gold shadow-sm text-champagne'
-                            : 'border-warm-brown hover:border-gold/30 text-muted-cream'
+                            ? 'border-hello-pink shadow-sm text-charcoal'
+                            : 'border-blush-pink hover:border-hello-pink/30 text-muted-text'
                         }`}
                       >
                         <div className={`w-4 h-4 rounded-full border ${c.bg}`} />
@@ -363,22 +363,22 @@ export default function OrderPage() {
                 <FormSection title="Reference Photo (Optional)">
                   <div
                     onClick={() => fileInputRef.current?.click()}
-                    className="w-full border-2 border-dashed border-warm-brown rounded-xl p-6 text-center cursor-pointer hover:border-gold/30 transition-colors bg-dark-cocoa"
+                    className="w-full border-2 border-dashed border-blush-pink rounded-xl p-6 text-center cursor-pointer hover:border-hello-pink/40 transition-colors bg-white"
                   >
                     {refImage ? (
                       <div className="relative inline-block">
-                        <img src={refImage} alt="Reference" className="w-24 h-24 object-cover rounded-xl border border-gold/15" />
+                        <img src={refImage} alt="Reference" className="w-24 h-24 object-cover rounded-xl border border-blush-pink" />
                         <button
                           onClick={(e) => { e.stopPropagation(); setRefImage(null) }}
-                          className="absolute -top-2 -right-2 w-5 h-5 bg-gold text-deep-espresso rounded-full flex items-center justify-center text-[10px] cursor-pointer"
+                          className="absolute -top-2 -right-2 w-5 h-5 bg-hello-pink text-white rounded-full flex items-center justify-center text-[10px] cursor-pointer"
                         >
                           <X size={10} />
                         </button>
                       </div>
                     ) : (
                       <div className="flex flex-col items-center gap-2">
-                        <CloudUpload size={24} className="text-muted-cream/30" />
-                        <span className="text-xs font-body text-muted-cream/40">Click to upload reference image</span>
+                        <CloudUpload size={24} className="text-muted-text/30" />
+                        <span className="text-xs font-body text-muted-text/40">Click to upload reference image</span>
                       </div>
                     )}
                   </div>
@@ -394,7 +394,7 @@ export default function OrderPage() {
                     onChange={(e) => setRefNotes(e.target.value)}
                     placeholder="Design notes (optional)..."
                     rows={2}
-                    className="w-full mt-3 px-4 py-3 rounded-xl border-2 border-warm-brown bg-dark-cocoa text-sm font-body text-champagne placeholder-muted-cream/30 focus:border-gold focus:outline-none transition-colors resize-none"
+                    className="w-full mt-3 px-4 py-3 rounded-xl border-2 border-blush-pink bg-white text-sm font-body text-charcoal placeholder-muted-text/30 focus:border-hello-pink focus:outline-none transition-colors resize-none"
                   />
                 </FormSection>
 
@@ -406,12 +406,12 @@ export default function OrderPage() {
                         onClick={() => setDeliveryZone(z.id)}
                         className={`p-3 rounded-xl border-2 text-xs font-body font-bold text-center transition-all cursor-pointer ${
                           deliveryZone === z.id
-                            ? 'border-gold bg-warm-brown/60 shadow-sm shadow-gold/10 text-champagne'
-                            : 'border-warm-brown hover:border-gold/30 bg-dark-cocoa text-muted-cream'
+                            ? 'border-hello-pink bg-soft-pink shadow-sm shadow-hello-pink/10 text-charcoal'
+                            : 'border-blush-pink hover:border-hello-pink/30 bg-white text-muted-text'
                         }`}
                       >
                         {z.name}
-                        <span className="block text-[10px] font-mono text-gold/50 mt-1">
+                        <span className="block text-[10px] font-mono text-hello-pink/60 mt-1">
                           {z.fee === 0 ? 'FREE' : `\u09F3${z.fee}`}
                         </span>
                       </button>
@@ -426,12 +426,12 @@ export default function OrderPage() {
                       value={date}
                       onChange={(e) => setDate(e.target.value)}
                       min={new Date().toISOString().split('T')[0]}
-                      className="w-full px-4 py-3 rounded-xl border-2 border-warm-brown bg-dark-cocoa text-sm font-body text-champagne focus:border-gold focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 rounded-xl border-2 border-blush-pink bg-white text-sm font-body text-charcoal focus:border-hello-pink focus:outline-none transition-colors"
                     />
                     <select
                       value={time}
                       onChange={(e) => setTime(e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl border-2 border-warm-brown bg-dark-cocoa text-sm font-body text-champagne focus:border-gold focus:outline-none transition-colors appearance-none cursor-pointer"
+                      className="w-full px-4 py-3 rounded-xl border-2 border-blush-pink bg-white text-sm font-body text-charcoal focus:border-hello-pink focus:outline-none transition-colors appearance-none cursor-pointer"
                     >
                       {timeSlots.map((ts) => (
                         <option key={ts} value={ts}>{ts}</option>
@@ -442,25 +442,25 @@ export default function OrderPage() {
 
                 <FormSection title="Your Details">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Your Name *" className="w-full px-4 py-3 rounded-xl border-2 border-warm-brown bg-dark-cocoa text-sm font-body text-champagne placeholder-muted-cream/30 focus:border-gold focus:outline-none transition-colors" />
-                    <input type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Phone Number *" className="w-full px-4 py-3 rounded-xl border-2 border-warm-brown bg-dark-cocoa text-sm font-body text-champagne placeholder-muted-cream/30 focus:border-gold focus:outline-none transition-colors" />
+                    <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Your Name *" className="w-full px-4 py-3 rounded-xl border-2 border-blush-pink bg-white text-sm font-body text-charcoal placeholder-muted-text/30 focus:border-hello-pink focus:outline-none transition-colors" />
+                    <input type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Phone Number *" className="w-full px-4 py-3 rounded-xl border-2 border-blush-pink bg-white text-sm font-body text-charcoal placeholder-muted-text/30 focus:border-hello-pink focus:outline-none transition-colors" />
                   </div>
-                  <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email (for invoice)" className="w-full mt-4 px-4 py-3 rounded-xl border-2 border-warm-brown bg-dark-cocoa text-sm font-body text-champagne placeholder-muted-cream/30 focus:border-gold focus:outline-none transition-colors" />
-                  <textarea value={address} onChange={(e) => setAddress(e.target.value)} placeholder="Delivery Address" rows={2} className="w-full mt-4 px-4 py-3 rounded-xl border-2 border-warm-brown bg-dark-cocoa text-sm font-body text-champagne placeholder-muted-cream/30 focus:border-gold focus:outline-none transition-colors resize-none" />
-                  <textarea value={instructions} onChange={(e) => setInstructions(e.target.value)} placeholder="Special instructions..." rows={2} className="w-full mt-4 px-4 py-3 rounded-xl border-2 border-warm-brown bg-dark-cocoa text-sm font-body text-champagne placeholder-muted-cream/30 focus:border-gold focus:outline-none transition-colors resize-none" />
+                  <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email (for invoice)" className="w-full mt-4 px-4 py-3 rounded-xl border-2 border-blush-pink bg-white text-sm font-body text-charcoal placeholder-muted-text/30 focus:border-hello-pink focus:outline-none transition-colors" />
+                  <textarea value={address} onChange={(e) => setAddress(e.target.value)} placeholder="Delivery Address" rows={2} className="w-full mt-4 px-4 py-3 rounded-xl border-2 border-blush-pink bg-white text-sm font-body text-charcoal placeholder-muted-text/30 focus:border-hello-pink focus:outline-none transition-colors resize-none" />
+                  <textarea value={instructions} onChange={(e) => setInstructions(e.target.value)} placeholder="Special instructions..." rows={2} className="w-full mt-4 px-4 py-3 rounded-xl border-2 border-blush-pink bg-white text-sm font-body text-charcoal placeholder-muted-text/30 focus:border-hello-pink focus:outline-none transition-colors resize-none" />
                 </FormSection>
 
                 <div className="flex items-center gap-4 pt-4">
                   <button
                     onClick={() => setPhase(1)}
-                    className="px-6 py-3 border-2 border-warm-brown rounded-full text-sm font-body font-bold text-muted-cream/60 hover:border-gold/30 transition-all cursor-pointer"
+                    className="px-6 py-3 border-2 border-blush-pink rounded-full text-sm font-body font-bold text-muted-text/60 hover:border-hello-pink/30 transition-all cursor-pointer"
                   >
                     Back
                   </button>
                   <button
                     onClick={handleSubmit}
                     disabled={!name || !phone || !date}
-                    className="flex-1 px-8 py-3.5 bg-gold text-deep-espresso rounded-full text-sm font-body font-bold tracking-wide hover:bg-gold-light active:scale-[0.97] transition-all duration-300 shadow-lg shadow-gold/20 disabled:opacity-40 disabled:cursor-not-allowed"
+                    className="flex-1 px-8 py-3.5 bg-gradient-to-r from-hello-pink to-hot-pink text-white rounded-full text-sm font-body font-bold tracking-wide hover:from-hot-pink hover:to-deep-rose active:scale-[0.97] transition-all duration-300 shadow-lg shadow-hello-pink/20 disabled:opacity-40 disabled:cursor-not-allowed"
                   >
                     {!date && name && phone ? 'Select a Delivery Date' : `Place Order — ${'\u09F3'}${total.toLocaleString()}`}
                   </button>
@@ -468,8 +468,8 @@ export default function OrderPage() {
               </div>
 
               <div className="lg:col-span-1">
-                <div className="sticky top-24 bg-dark-cocoa rounded-2xl p-6 border border-gold/10 shadow-sm">
-                  <h3 className="font-display font-bold text-sm text-champagne mb-4">Order Summary</h3>
+                <div className="sticky top-24 bg-white rounded-2xl p-6 border border-blush-pink shadow-sm">
+                  <h3 className="font-display font-bold text-sm text-charcoal mb-4">Order Summary</h3>
                   <div className="space-y-2.5 text-xs">
                     <SummaryRow label="Cake Size" value={`${sizeData.name} (${sizeData.diameterSpec})`} />
                     <SummaryRow label="Servings" value={sizeData.servings} />
@@ -480,16 +480,16 @@ export default function OrderPage() {
                     <SummaryRow label="Color" value={accentColors.find((c) => c.id === accentColor)?.name} />
                     <SummaryRow label="Delivery" value={deliveryZones.find((z) => z.id === deliveryZone)?.name} />
 
-                    <div className="border-t border-gold/10 pt-2.5 mt-2.5 space-y-1.5">
+                    <div className="border-t border-blush-pink pt-2.5 mt-2.5 space-y-1.5">
                       <SummaryRow label="Cake Base" value={`\u09F3${sizeData.basePrice.toLocaleString()}`} />
                       {eggless && <SummaryRow label="Eggless" value={`\u09F3250`} />}
                       <SummaryRow label="Delivery" value={deliveryCost === 0 ? 'FREE' : `\u09F3${deliveryCost}`} />
                     </div>
 
-                    <div className="border-t border-gold/10 pt-2.5 mt-2.5">
+                    <div className="border-t border-blush-pink pt-2.5 mt-2.5">
                       <div className="flex justify-between items-center">
-                        <span className="font-body font-bold text-champagne">Total</span>
-                        <span className="font-mono font-bold text-lg text-gold">{'\u09F3'}{total.toLocaleString()}</span>
+                        <span className="font-body font-bold text-charcoal">Total</span>
+                        <span className="font-mono font-bold text-lg text-hello-pink">{'\u09F3'}{total.toLocaleString()}</span>
                       </div>
                     </div>
                   </div>
@@ -506,7 +506,7 @@ export default function OrderPage() {
 function FormSection({ title, children }) {
   return (
     <div>
-      <h3 className="font-display font-bold text-sm text-champagne mb-3">{title}</h3>
+      <h3 className="font-display font-bold text-sm text-charcoal mb-3">{title}</h3>
       {children}
     </div>
   )
@@ -515,8 +515,8 @@ function FormSection({ title, children }) {
 function SummaryRow({ label, value, italic }) {
   return (
     <div className="flex justify-between items-center py-0.5">
-      <span className="text-muted-cream/50">{label}</span>
-      <span className={`font-bold text-champagne text-right ${italic ? 'italic' : ''}`}>{value}</span>
+      <span className="text-muted-text/50">{label}</span>
+      <span className={`font-bold text-charcoal text-right ${italic ? 'italic' : ''}`}>{value}</span>
     </div>
   )
 }

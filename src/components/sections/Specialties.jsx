@@ -6,26 +6,26 @@ const specialties = [
   {
     title: 'Korean Bento Cakes',
     description: 'Adorable mini cakes, perfectly portioned for intimate celebrations and sweet gifting.',
-    accent: 'text-gold',
-    border: 'border-gold/20 hover:border-gold/40',
+    accent: 'text-hello-pink',
+    border: 'border-hello-pink/15 hover:border-hello-pink/40',
   },
   {
     title: 'Vintage Lambeth Piping',
     description: 'Intricate, royal-inspired buttercream piping that transforms cakes into edible art.',
-    accent: 'text-rose-accent',
-    border: 'border-rose-accent/20 hover:border-rose-accent/40',
+    accent: 'text-hot-pink',
+    border: 'border-hot-pink/15 hover:border-hot-pink/40',
   },
   {
     title: 'Multi-Tier Towers',
     description: 'Showstopping celebration cakes for weddings, birthdays, and milestone events.',
-    accent: 'text-champagne',
-    border: 'border-gold/15 hover:border-gold/35',
+    accent: 'text-charcoal',
+    border: 'border-blush-pink hover:border-hello-pink/30',
   },
   {
     title: '100% Eggless Options',
     description: 'Every flavor available in pure eggless preparation without compromising on taste.',
-    accent: 'text-blush',
-    border: 'border-blush/20 hover:border-blush/40',
+    accent: 'text-deep-rose',
+    border: 'border-deep-rose/15 hover:border-deep-rose/40',
   },
 ]
 
@@ -52,16 +52,16 @@ export default function Specialties() {
           className="text-center mb-12 sm:mb-16"
         >
           <div className="inline-flex items-center gap-2 mb-3">
-            <StarSvg className="w-3 h-3 text-gold" />
-            <span className="text-[10px] sm:text-xs font-body font-semibold tracking-[0.3em] uppercase text-gold/50">
+            <StarSvg className="w-3 h-3 text-hello-pink" />
+            <span className="text-[10px] sm:text-xs font-body font-semibold tracking-[0.3em] uppercase text-hello-pink/60">
               What We Do Best
             </span>
-            <StarSvg className="w-3 h-3 text-gold" />
+            <StarSvg className="w-3 h-3 text-hello-pink" />
           </div>
-          <h2 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-champagne">
+          <h2 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-charcoal">
             Our Specialties
           </h2>
-          <div className="w-12 h-[1px] bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mt-3" />
+          <div className="w-12 h-[1px] bg-gradient-to-r from-transparent via-hello-pink to-transparent mx-auto mt-3" />
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -75,10 +75,10 @@ export default function Specialties() {
               whileHover={{ y: -8, transition: { type: 'spring', stiffness: 300, damping: 18 } }}
               className={`glass-card rounded-2xl p-6 sm:p-7 border ${item.border} transition-all duration-300`}
             >
-              <div className={`inline-flex px-3 py-1 rounded-full text-[10px] font-body font-bold tracking-wider uppercase mb-4 ${item.accent} bg-warm-brown/60`}>
+              <div className={`inline-flex px-3 py-1 rounded-full text-[10px] font-body font-bold tracking-wider uppercase mb-4 ${item.accent} bg-soft-pink/80`}>
                 {item.title}
               </div>
-              <p className="text-muted-cream text-sm leading-relaxed">
+              <p className="text-muted-text text-sm leading-relaxed">
                 {item.description}
               </p>
             </motion.div>

@@ -29,7 +29,7 @@ export default function SignatureCakes() {
   const isInView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section ref={ref} className="py-16 sm:py-24 px-4 sm:px-8 relative">
+    <section ref={ref} className="py-16 sm:py-24 px-4 sm:px-8 bg-soft-pink/40 relative">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -39,15 +39,15 @@ export default function SignatureCakes() {
         >
           <div className="inline-flex items-center gap-2 mb-3">
             <StrawberrySvg className="w-4 h-4" />
-            <span className="text-[10px] sm:text-xs font-body font-semibold tracking-[0.3em] uppercase text-gold/50">
+            <span className="text-[10px] sm:text-xs font-body font-semibold tracking-[0.3em] uppercase text-hello-pink/60">
               Artisan Confections
             </span>
             <StrawberrySvg className="w-4 h-4" />
           </div>
-          <h2 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-champagne">
+          <h2 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-charcoal">
             Signature Cakes
           </h2>
-          <div className="w-12 h-[1px] bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mt-3" />
+          <div className="w-12 h-[1px] bg-gradient-to-r from-transparent via-hello-pink to-transparent mx-auto mt-3" />
         </motion.div>
 
         <motion.div
@@ -68,24 +68,24 @@ export default function SignatureCakes() {
                   <img
                     src="/badge-best-seller.webp"
                     alt="Best Selling Badge"
-                    className="absolute inset-0 w-full h-full object-contain drop-shadow-[0_4px_10px_rgba(200,169,110,0.3)]"
+                    className="absolute inset-0 w-full h-full object-contain drop-shadow-[0_4px_10px_rgba(255,133,162,0.3)]"
                     loading="lazy"
                   />
-                  <span className="relative z-10 text-[8px] sm:text-[9px] font-body font-black tracking-tight uppercase text-deep-espresso text-center leading-[1.05] px-1 transform -rotate-6">
+                  <span className="relative z-10 text-[8px] sm:text-[9px] font-body font-black tracking-tight uppercase text-white text-center leading-[1.05] px-1 transform -rotate-6">
                     Best<br />Selling
                   </span>
                 </div>
               )}
 
-              <div className="aspect-square w-full flex items-center justify-center bg-dark-cocoa/40 rounded-2xl border border-gold/5 group-hover:border-gold/20 transition-all duration-300 overflow-hidden">
+              <div className="aspect-square w-full flex items-center justify-center bg-white rounded-2xl border border-blush-pink/50 group-hover:border-hello-pink/40 shadow-sm group-hover:shadow-md group-hover:shadow-hello-pink/10 transition-all duration-300 overflow-hidden">
                 <img
                   src={cake.src}
                   alt={`Hakuna Potata ${cake.name}`}
-                  className="w-full h-full object-contain filter drop-shadow-[0_8px_16px_rgba(0,0,0,0.3)] group-hover:drop-shadow-[0_12px_24px_rgba(200,169,110,0.15)] group-hover:scale-105 transition-all duration-300"
+                  className="w-full h-full object-contain filter drop-shadow-[0_4px_8px_rgba(0,0,0,0.06)] group-hover:drop-shadow-[0_8px_16px_rgba(255,133,162,0.12)] group-hover:scale-105 transition-all duration-300"
                   loading="lazy"
                 />
               </div>
-              <span className="mt-2 text-xs font-body font-semibold text-muted-cream/60 group-hover:text-champagne transition-colors text-center">
+              <span className="mt-2 text-xs font-body font-semibold text-muted-text/70 group-hover:text-charcoal transition-colors text-center">
                 {cake.name}
               </span>
             </motion.div>
@@ -100,7 +100,7 @@ export default function SignatureCakes() {
         >
           <Link
             to="/gallery"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-gold/10 text-gold border border-gold/25 rounded-full text-sm font-body font-bold tracking-wide hover:bg-gold/20 hover:border-gold/40 active:scale-[0.97] transition-all duration-300"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-hello-pink/10 text-hello-pink border border-hello-pink/25 rounded-full text-sm font-body font-bold tracking-wide hover:bg-hello-pink/20 hover:border-hello-pink/40 active:scale-[0.97] transition-all duration-300"
           >
             View Full Gallery
             <ArrowRight size={15} />

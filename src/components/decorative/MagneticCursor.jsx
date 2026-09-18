@@ -52,8 +52,8 @@ export default function MagneticCursor() {
       <div
         className={`w-full h-full rounded-full border transition-all duration-300 ${
           hovering
-            ? 'border-gold bg-gold/10'
-            : 'border-gold/50 bg-transparent'
+            ? 'border-hot-pink bg-hot-pink/10'
+            : 'border-hello-pink/50 bg-transparent'
         }`}
         style={{ transform: 'translate(-50%, -50%)' }}
       />

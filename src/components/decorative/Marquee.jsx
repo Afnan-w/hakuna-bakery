@@ -12,20 +12,20 @@ const defaultItems = [
 export default function Marquee({
   items = defaultItems,
   className = '',
-  tone = 'gold',
+  tone = 'pink',
   reverse = false,
 }) {
   const tones = {
-    gold: 'bg-gold/10 text-gold border-y border-gold/20',
-    dark: 'bg-dark-cocoa text-champagne border-y border-warm-brown',
-    rose: 'bg-rose-accent/10 text-rose-accent border-y border-rose-accent/20',
+    pink: 'bg-hello-pink/10 text-hello-pink border-y border-hello-pink/20',
+    white: 'bg-white text-charcoal border-y border-blush-pink',
+    rose: 'bg-hot-pink/10 text-hot-pink border-y border-hot-pink/20',
   }
 
   const row = [...items, ...items]
 
   return (
     <div
-      className={`relative overflow-hidden py-3.5 sm:py-4 ${tones[tone] || tones.gold} ${className}`}
+      className={`relative overflow-hidden py-3.5 sm:py-4 ${tones[tone] || tones.pink} ${className}`}
       aria-hidden="true"
     >
       <div

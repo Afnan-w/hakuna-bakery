@@ -55,7 +55,7 @@ export default function BackgroundMusic() {
         onClick={toggle}
         aria-label={muted ? 'Unmute background music' : 'Mute background music'}
         title={muted ? 'Unmute music' : 'Mute music'}
-        className="fixed bottom-5 right-5 z-40 w-11 h-11 rounded-full bg-warm-brown/90 text-gold shadow-lg shadow-black/30 backdrop-blur border border-gold/15 flex items-center justify-center hover:bg-brown-mid hover:border-gold/30 active:scale-95 transition-all duration-200"
+        className="fixed bottom-5 right-5 z-40 w-11 h-11 rounded-full bg-white/90 text-hello-pink shadow-lg shadow-hello-pink/15 backdrop-blur border border-blush-pink flex items-center justify-center hover:bg-soft-pink hover:border-hello-pink/40 active:scale-95 transition-all duration-200"
       >
         {muted ? <VolumeX size={18} /> : <Volume2 size={18} />}
       </button>
