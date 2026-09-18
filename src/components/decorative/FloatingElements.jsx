@@ -1,10 +1,10 @@
 export function CherrySvg({ className = "w-6 h-6" }) {
   return (
     <svg viewBox="0 0 40 40" fill="none" className={className}>
-      <circle cx="14" cy="24" r="8" fill="#FF9EB5" opacity="0.7" />
-      <circle cx="26" cy="20" r="7" fill="#FFB8C9" opacity="0.6" />
-      <path d="M14 16 C14 8, 20 4, 26 8" stroke="#FF6B8A" strokeWidth="1.5" fill="none" opacity="0.5" />
-      <path d="M26 13 C28 6, 32 4, 34 6" stroke="#FF6B8A" strokeWidth="1.5" fill="none" opacity="0.5" />
+      <circle cx="14" cy="24" r="8" fill="#FF85A2" opacity="0.7" />
+      <circle cx="26" cy="20" r="7" fill="#FFD6E0" opacity="0.6" />
+      <path d="M14 16 C14 8, 20 4, 26 8" stroke="#FF5A8A" strokeWidth="1.5" fill="none" opacity="0.5" />
+      <path d="M26 13 C28 6, 32 4, 34 6" stroke="#FF5A8A" strokeWidth="1.5" fill="none" opacity="0.5" />
       <ellipse cx="12" cy="22" rx="2" ry="2.5" fill="white" opacity="0.3" />
       <ellipse cx="24" cy="18" rx="1.8" ry="2.2" fill="white" opacity="0.3" />
     </svg>
@@ -14,9 +14,9 @@ export function CherrySvg({ className = "w-6 h-6" }) {
 export function StrawberrySvg({ className = "w-6 h-6" }) {
   return (
     <svg viewBox="0 0 40 44" fill="none" className={className}>
-      <path d="M20 8 C12 8, 6 16, 8 26 C10 34, 16 40, 20 40 C24 40, 30 34, 32 26 C34 16, 28 8, 20 8Z" fill="#FF9EB5" opacity="0.6" />
-      <path d="M16 6 C16 2, 20 0, 22 2" stroke="#FF6B8A" strokeWidth="2" fill="none" opacity="0.5" />
-      <path d="M18 4 C18 1, 20 -1, 22 1" stroke="#FF6B8A" strokeWidth="1.5" fill="none" opacity="0.5" />
+      <path d="M20 8 C12 8, 6 16, 8 26 C10 34, 16 40, 20 40 C24 40, 30 34, 32 26 C34 16, 28 8, 20 8Z" fill="#FF85A2" opacity="0.6" />
+      <path d="M16 6 C16 2, 20 0, 22 2" stroke="#FF5A8A" strokeWidth="2" fill="none" opacity="0.5" />
+      <path d="M18 4 C18 1, 20 -1, 22 1" stroke="#FF5A8A" strokeWidth="1.5" fill="none" opacity="0.5" />
       <circle cx="15" cy="20" r="1" fill="white" opacity="0.3" />
       <circle cx="20" cy="24" r="1" fill="white" opacity="0.3" />
       <circle cx="25" cy="20" r="1" fill="white" opacity="0.3" />
@@ -29,11 +29,11 @@ export function StrawberrySvg({ className = "w-6 h-6" }) {
 export function CakeSliceSvg({ className = "w-6 h-6" }) {
   return (
     <svg viewBox="0 0 40 40" fill="none" className={className}>
-      <path d="M8 32 L20 8 L32 32 Z" fill="#FFF8F9" stroke="#FF9EB5" strokeWidth="1.5" />
-      <path d="M12 26 L20 12 L28 26 Z" fill="#FFF8F9" opacity="0.7" />
-      <circle cx="20" cy="14" r="3" fill="#FF9EB5" opacity="0.5" />
-      <path d="M8 32 L32 32" stroke="#FF9EB5" strokeWidth="2" opacity="0.6" />
-      <path d="M14 20 L26 20" stroke="#FFB8C9" strokeWidth="1" strokeDasharray="2 2" opacity="0.5" />
+      <path d="M8 32 L20 8 L32 32 Z" fill="#FFF0F5" stroke="#FF85A2" strokeWidth="1.5" />
+      <path d="M12 26 L20 12 L28 26 Z" fill="#FFFBFC" opacity="0.7" />
+      <circle cx="20" cy="14" r="3" fill="#FF85A2" opacity="0.5" />
+      <path d="M8 32 L32 32" stroke="#FF85A2" strokeWidth="2" opacity="0.6" />
+      <path d="M14 20 L26 20" stroke="#FFD6E0" strokeWidth="1" strokeDasharray="2 2" opacity="0.5" />
     </svg>
   )
 }
@@ -41,13 +41,13 @@ export function CakeSliceSvg({ className = "w-6 h-6" }) {
 export function ButtercreamFlowerSvg({ className = "w-6 h-6" }) {
   return (
     <svg viewBox="0 0 40 40" fill="none" className={className}>
-      <circle cx="20" cy="20" r="4" fill="#FFB8C9" opacity="0.7" />
-      <circle cx="20" cy="12" r="5" fill="#FF9EB5" opacity="0.4" />
-      <circle cx="27" cy="16" r="5" fill="#FFD0DA" opacity="0.35" />
-      <circle cx="27" cy="25" r="5" fill="#FF9EB5" opacity="0.35" />
-      <circle cx="20" cy="28" r="5" fill="#FFD0DA" opacity="0.4" />
-      <circle cx="13" cy="25" r="5" fill="#FF9EB5" opacity="0.35" />
-      <circle cx="13" cy="16" r="5" fill="#FFD0DA" opacity="0.35" />
+      <circle cx="20" cy="20" r="4" fill="#FFD6E0" opacity="0.7" />
+      <circle cx="20" cy="12" r="5" fill="#FF85A2" opacity="0.4" />
+      <circle cx="27" cy="16" r="5" fill="#FFB6C1" opacity="0.35" />
+      <circle cx="27" cy="25" r="5" fill="#FF85A2" opacity="0.35" />
+      <circle cx="20" cy="28" r="5" fill="#FFB6C1" opacity="0.4" />
+      <circle cx="13" cy="25" r="5" fill="#FF85A2" opacity="0.35" />
+      <circle cx="13" cy="16" r="5" fill="#FFB6C1" opacity="0.35" />
       <circle cx="20" cy="20" r="3" fill="white" opacity="0.6" />
     </svg>
   )
@@ -64,12 +64,12 @@ export function StarSvg({ className = "w-4 h-4" }) {
 export function SprinklesSvg({ className = "w-6 h-6" }) {
   return (
     <svg viewBox="0 0 48 48" fill="none" className={className}>
-      <rect x="8" y="10" width="7" height="3" rx="1.5" fill="#FF9EB5" opacity="0.6" transform="rotate(-30 11.5 11.5)" />
-      <rect x="22" y="4" width="6" height="3" rx="1.5" fill="#FFB8C9" opacity="0.5" transform="rotate(20 25 5.5)" />
-      <rect x="36" y="12" width="7" height="3" rx="1.5" fill="#FF6B8A" opacity="0.5" transform="rotate(45 39.5 13.5)" />
-      <rect x="12" y="30" width="6" height="3" rx="1.5" fill="#FFD0DA" opacity="0.5" transform="rotate(-15 15 31.5)" />
-      <rect x="32" y="28" width="7" height="3" rx="1.5" fill="#FF9EB5" opacity="0.5" transform="rotate(40 35.5 29.5)" />
-      <rect x="6" y="42" width="6" height="3" rx="1.5" fill="#FFB8C9" opacity="0.4" transform="rotate(10 9 43.5)" />
+      <rect x="8" y="10" width="7" height="3" rx="1.5" fill="#FF85A2" opacity="0.6" transform="rotate(-30 11.5 11.5)" />
+      <rect x="22" y="4" width="6" height="3" rx="1.5" fill="#FFD6E0" opacity="0.5" transform="rotate(20 25 5.5)" />
+      <rect x="36" y="12" width="7" height="3" rx="1.5" fill="#FF5A8A" opacity="0.5" transform="rotate(45 39.5 13.5)" />
+      <rect x="12" y="30" width="6" height="3" rx="1.5" fill="#FFB6C1" opacity="0.5" transform="rotate(-15 15 31.5)" />
+      <rect x="32" y="28" width="7" height="3" rx="1.5" fill="#FF85A2" opacity="0.5" transform="rotate(40 35.5 29.5)" />
+      <rect x="6" y="42" width="6" height="3" rx="1.5" fill="#FFD6E0" opacity="0.4" transform="rotate(10 9 43.5)" />
     </svg>
   )
 }

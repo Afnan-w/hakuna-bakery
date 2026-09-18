@@ -4,7 +4,6 @@ import Specialties from '../components/sections/Specialties'
 import SignatureCakes from '../components/sections/SignatureCakes'
 import HowItWorks from '../components/sections/HowItWorks'
 import Testimonials from '../components/sections/Testimonials'
-import CustomerReviews from '../components/sections/CustomerReviews'
 import ContactBanner from '../components/sections/ContactBanner'
 import Marquee from '../components/decorative/Marquee'
 import WaveDivider from '../components/decorative/WaveDivider'
@@ -41,7 +40,6 @@ export default function HomePage() {
       <HowItWorks />
       <WaveDivider />
       <Testimonials />
-      <CustomerReviews />
       <ContactBanner />
     </motion.div>
   )
