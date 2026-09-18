@@ -22,11 +22,11 @@ export default function HomePage() {
       <WaveDivider />
       <Marquee />
       <Specialties />
-      <WaveDivider fill="var(--color-vanilla)" />
+      <WaveDivider />
       <SignatureCakes />
       <WaveDivider />
       <Marquee
-        tone="butter"
+        tone="dark"
         reverse
         items={[
           'Order Online',
@@ -38,7 +38,7 @@ export default function HomePage() {
         ]}
       />
       <HowItWorks />
-      <WaveDivider fill="var(--color-vanilla)" />
+      <WaveDivider />
       <Testimonials />
       <ContactBanner />
     </motion.div>

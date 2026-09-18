@@ -4,6 +4,8 @@ import Layout from './components/layout/Layout'
 import ScrollToTop from './components/layout/ScrollToTop'
 import ScrollProgress from './components/layout/ScrollProgress'
 import BackgroundMusic from './components/layout/BackgroundMusic'
+import MagneticCursor from './components/decorative/MagneticCursor'
+import FloatingParticles from './components/decorative/FloatingParticles'
 import HomePage from './pages/HomePage'
 import GalleryPage from './pages/GalleryPage'
 import OrderPage from './pages/OrderPage'
@@ -18,6 +20,8 @@ export default function App() {
       <ScrollToTop />
       <ScrollProgress />
       <BackgroundMusic />
+      <FloatingParticles />
+      <MagneticCursor />
       <Layout>
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>

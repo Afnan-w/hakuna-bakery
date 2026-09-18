@@ -2,7 +2,6 @@ import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { MessageCircle, Phone, ArrowRight } from 'lucide-react'
-import { CherrySvg, StrawberrySvg } from '../decorative/FloatingElements'
 
 export default function ContactBanner() {
   const ref = useRef(null)
@@ -14,17 +13,15 @@ export default function ContactBanner() {
         initial={{ opacity: 0, y: 30 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.7 }}
-        className="max-w-5xl mx-auto bg-deep-cocoa rounded-3xl p-8 sm:p-12 md:p-16 text-center relative overflow-hidden"
+        className="max-w-5xl mx-auto bg-dark-cocoa rounded-3xl p-8 sm:p-12 md:p-16 text-center relative overflow-hidden border border-gold/10"
       >
-        {/* Decorative elements */}
-        <div className="absolute top-6 left-8 opacity-20">
-          <CherrySvg className="w-10 h-10 sm:w-14 sm:h-14" />
+        <div className="absolute inset-0 bg-gradient-to-br from-gold/5 via-transparent to-rose-accent/5 pointer-events-none" />
+
+        <div className="absolute top-6 left-8 opacity-10">
+          <span className="text-gold text-4xl">&#10022;</span>
         </div>
-        <div className="absolute bottom-8 right-10 opacity-20">
-          <StrawberrySvg className="w-8 h-8 sm:w-12 sm:h-12" />
-        </div>
-        <div className="absolute top-10 right-16 opacity-10">
-          <CherrySvg className="w-6 h-6" />
+        <div className="absolute bottom-8 right-10 opacity-10">
+          <span className="text-rose-accent text-3xl">&#10022;</span>
         </div>
 
         <div className="relative z-10">
@@ -32,15 +29,15 @@ export default function ContactBanner() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className="inline-block text-[10px] sm:text-xs font-body font-bold tracking-[0.3em] uppercase text-white/40 mb-4"
+            className="inline-block text-[10px] sm:text-xs font-body font-semibold tracking-[0.3em] uppercase text-gold/60 mb-4"
           >
             Let&apos;s Create Something Sweet
           </motion.span>
 
-          <h2 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-white mb-4">
+          <h2 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-champagne mb-4">
             Ready to Order Your Dream Cake?
           </h2>
-          <p className="text-white/50 text-sm sm:text-base max-w-lg mx-auto mb-8 leading-relaxed">
+          <p className="text-muted-cream text-sm sm:text-base max-w-lg mx-auto mb-8 leading-relaxed">
             Chat with us on WhatsApp for quick orders, or use our custom cake builder
             to design every detail of your perfect cake.
           </p>
@@ -50,21 +47,21 @@ export default function ContactBanner() {
               href="https://wa.me/8801339656675"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-[#25D366] text-white rounded-full text-sm font-body font-bold tracking-wide hover:bg-[#20BD5C] active:scale-[0.97] transition-all duration-300 shadow-lg shadow-[#25D366]/25"
+              className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-[#25D366] text-white rounded-full text-sm font-body font-bold tracking-wide hover:bg-[#20BD5C] active:scale-[0.97] transition-all duration-300 shadow-lg shadow-[#25D366]/20"
             >
               <MessageCircle size={18} />
               WhatsApp Us
             </a>
             <a
               href="tel:+8801339656675"
-              className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-white/10 text-white border border-white/20 rounded-full text-sm font-body font-bold tracking-wide hover:bg-white/20 active:scale-[0.97] transition-all duration-300"
+              className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-warm-brown/60 text-champagne border border-gold/15 rounded-full text-sm font-body font-bold tracking-wide hover:bg-warm-brown hover:border-gold/30 active:scale-[0.97] transition-all duration-300"
             >
               <Phone size={16} />
               Call Us
             </a>
             <Link
               to="/order"
-              className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-white text-deep-cocoa rounded-full text-sm font-body font-bold tracking-wide hover:bg-white/90 active:scale-[0.97] transition-all duration-300 shadow-lg"
+              className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-gold text-deep-espresso rounded-full text-sm font-body font-bold tracking-wide hover:bg-gold-light active:scale-[0.97] transition-all duration-300 shadow-lg shadow-gold/20"
             >
               Order Online
               <ArrowRight size={15} />

@@ -1,3 +1,5 @@
+import { DiamondSvg } from './FloatingElements'
+
 const defaultItems = [
   'Fresh Bakes Daily',
   'Korean Bento Cakes',
@@ -10,21 +12,20 @@ const defaultItems = [
 export default function Marquee({
   items = defaultItems,
   className = '',
-  tone = 'chocolate',
+  tone = 'gold',
   reverse = false,
 }) {
   const tones = {
-    chocolate: 'bg-chocolate text-white',
-    strawberry: 'bg-strawberry text-white',
-    butter: 'bg-butter text-chocolate',
-    pistachio: 'bg-pistachio text-chocolate',
+    gold: 'bg-gold/10 text-gold border-y border-gold/20',
+    dark: 'bg-dark-cocoa text-champagne border-y border-warm-brown',
+    rose: 'bg-rose-accent/10 text-rose-accent border-y border-rose-accent/20',
   }
 
   const row = [...items, ...items]
 
   return (
     <div
-      className={`relative overflow-hidden py-3 sm:py-4 ${tones[tone] || tones.chocolate} ${className}`}
+      className={`relative overflow-hidden py-3.5 sm:py-4 ${tones[tone] || tones.gold} ${className}`}
       aria-hidden="true"
     >
       <div
@@ -33,10 +34,10 @@ export default function Marquee({
         {row.map((item, i) => (
           <span
             key={i}
-            className="flex items-center gap-6 sm:gap-10 px-3 sm:px-5 font-display font-semibold text-xs sm:text-sm tracking-wide whitespace-nowrap"
+            className="flex items-center gap-6 sm:gap-10 px-3 sm:px-5 font-display font-semibold text-xs sm:text-sm tracking-wider uppercase whitespace-nowrap"
           >
             {item}
-            <span className="text-base sm:text-lg opacity-80">✿</span>
+            <DiamondSvg className="w-2.5 h-2.5 opacity-40" />
           </span>
         ))}
       </div>

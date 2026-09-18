@@ -1,6 +1,5 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
-import { Quote } from 'lucide-react'
 
 const testimonials = [
   {
@@ -40,23 +39,23 @@ export default function Testimonials() {
   }, [paused])
 
   return (
-    <section ref={ref} className="py-16 sm:py-24 px-4 sm:px-8 bg-vanilla/60 relative overflow-hidden">
-      <div className="pointer-events-none absolute -top-20 -left-20 w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-strawberry/15 blur-3xl animate-blob" aria-hidden="true" />
-      <div className="pointer-events-none absolute -bottom-20 -right-20 w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-pistachio/20 blur-3xl animate-blob" style={{ animationDelay: '4s' }} aria-hidden="true" />
-      <div className="max-w-4xl mx-auto relative">
+    <section ref={ref} className="py-16 sm:py-24 px-4 sm:px-8 relative overflow-hidden">
+      <div className="pointer-events-none absolute -top-20 -left-20 w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-gold/4 blur-3xl animate-blob" aria-hidden="true" />
+      <div className="pointer-events-none absolute -bottom-20 -right-20 w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-rose-accent/3 blur-3xl animate-blob" style={{ animationDelay: '4s' }} aria-hidden="true" />
+      <div className="max-w-4xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="text-center mb-10 sm:mb-14"
         >
-          <span className="text-[10px] sm:text-xs font-body font-bold tracking-[0.3em] uppercase text-cocoa/40">
+          <span className="text-[10px] sm:text-xs font-body font-semibold tracking-[0.3em] uppercase text-gold/50">
             Love Notes
           </span>
-          <h2 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-chocolate mt-2">
+          <h2 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-champagne mt-2">
             What Our Customers Say
           </h2>
-          <div className="w-12 h-[2px] bg-strawberry mx-auto mt-3 rounded-full" />
+          <div className="w-12 h-[1px] bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mt-3" />
         </motion.div>
 
         <div
@@ -77,13 +76,13 @@ export default function Testimonials() {
               className="absolute inset-0 flex flex-col items-center justify-center text-center"
               style={{ pointerEvents: current === i ? 'auto' : 'none' }}
             >
-              <Quote size={32} className="text-strawberry/30 mb-4" />
-              <p className="font-display italic text-lg sm:text-xl md:text-2xl text-chocolate leading-relaxed max-w-2xl">
-                &ldquo;{t.quote}&rdquo;
+              <span className="text-gold/20 text-5xl font-display leading-none mb-4">&ldquo;</span>
+              <p className="font-display italic text-lg sm:text-xl md:text-2xl text-champagne leading-relaxed max-w-2xl">
+                {t.quote}
               </p>
               <div className="mt-6 flex flex-col items-center">
-                <span className="font-body font-bold text-sm text-chocolate">{t.name}</span>
-                <span className="text-[11px] font-body text-cocoa/50 mt-0.5">{t.context}</span>
+                <span className="font-body font-bold text-sm text-gold">{t.name}</span>
+                <span className="text-[11px] font-body text-muted-cream/50 mt-0.5">{t.context}</span>
               </div>
             </motion.div>
           ))}
@@ -95,7 +94,7 @@ export default function Testimonials() {
               key={i}
               onClick={() => setCurrent(i)}
               className={`w-2 h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                current === i ? 'bg-strawberry w-6' : 'bg-butter hover:bg-strawberry/40'
+                current === i ? 'bg-gold w-6' : 'bg-warm-brown hover:bg-gold/40'
               }`}
               aria-label={`Testimonial ${i + 1}`}
             />

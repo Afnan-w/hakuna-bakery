@@ -29,7 +29,7 @@ export default function SignatureCakes() {
   const isInView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section ref={ref} className="py-16 sm:py-24 px-4 sm:px-8 bg-vanilla/50 relative">
+    <section ref={ref} className="py-16 sm:py-24 px-4 sm:px-8 relative">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -39,15 +39,15 @@ export default function SignatureCakes() {
         >
           <div className="inline-flex items-center gap-2 mb-3">
             <StrawberrySvg className="w-4 h-4" />
-            <span className="text-[10px] sm:text-xs font-body font-bold tracking-[0.3em] uppercase text-cocoa/40">
+            <span className="text-[10px] sm:text-xs font-body font-semibold tracking-[0.3em] uppercase text-gold/50">
               Artisan Confections
             </span>
             <StrawberrySvg className="w-4 h-4" />
           </div>
-          <h2 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-chocolate">
+          <h2 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-champagne">
             Signature Cakes
           </h2>
-          <div className="w-12 h-[2px] bg-strawberry mx-auto mt-3 rounded-full" />
+          <div className="w-12 h-[1px] bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mt-3" />
         </motion.div>
 
         <motion.div
@@ -60,7 +60,7 @@ export default function SignatureCakes() {
             <motion.div
               key={cake.id}
               variants={cardVariants}
-              whileHover={{ y: -8, rotate: 2, scale: 1.05, transition: { type: 'spring', stiffness: 300, damping: 18 } }}
+              whileHover={{ y: -8, scale: 1.05, transition: { type: 'spring', stiffness: 300, damping: 18 } }}
               className="group relative cursor-pointer flex flex-col items-center"
             >
               {cake.isBestSeller && (
@@ -68,24 +68,24 @@ export default function SignatureCakes() {
                   <img
                     src="/badge-best-seller.webp"
                     alt="Best Selling Badge"
-                    className="absolute inset-0 w-full h-full object-contain drop-shadow-[0_4px_10px_rgba(212,134,140,0.4)]"
+                    className="absolute inset-0 w-full h-full object-contain drop-shadow-[0_4px_10px_rgba(200,169,110,0.3)]"
                     loading="lazy"
                   />
-                  <span className="relative z-10 text-[8px] sm:text-[9px] font-body font-black tracking-tight uppercase text-white text-center leading-[1.05] px-1 transform -rotate-6">
+                  <span className="relative z-10 text-[8px] sm:text-[9px] font-body font-black tracking-tight uppercase text-deep-espresso text-center leading-[1.05] px-1 transform -rotate-6">
                     Best<br />Selling
                   </span>
                 </div>
               )}
 
-              <div className="aspect-square w-full flex items-center justify-center bg-transparent rounded-2xl">
+              <div className="aspect-square w-full flex items-center justify-center bg-dark-cocoa/40 rounded-2xl border border-gold/5 group-hover:border-gold/20 transition-all duration-300 overflow-hidden">
                 <img
                   src={cake.src}
                   alt={`Hakuna Potata ${cake.name}`}
-                  className="w-full h-full object-contain filter drop-shadow-[0_8px_16px_rgba(61,35,20,0.1)] group-hover:drop-shadow-[0_12px_24px_rgba(61,35,20,0.18)] group-hover:scale-105 transition-all duration-300"
+                  className="w-full h-full object-contain filter drop-shadow-[0_8px_16px_rgba(0,0,0,0.3)] group-hover:drop-shadow-[0_12px_24px_rgba(200,169,110,0.15)] group-hover:scale-105 transition-all duration-300"
                   loading="lazy"
                 />
               </div>
-              <span className="mt-2 text-xs font-body font-semibold text-cocoa/60 group-hover:text-chocolate transition-colors text-center">
+              <span className="mt-2 text-xs font-body font-semibold text-muted-cream/60 group-hover:text-champagne transition-colors text-center">
                 {cake.name}
               </span>
             </motion.div>
@@ -100,7 +100,7 @@ export default function SignatureCakes() {
         >
           <Link
             to="/gallery"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-chocolate text-white rounded-full text-sm font-body font-bold tracking-wide hover:bg-deep-cocoa active:scale-[0.97] transition-all duration-300 shadow-lg shadow-chocolate/15"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-gold/10 text-gold border border-gold/25 rounded-full text-sm font-body font-bold tracking-wide hover:bg-gold/20 hover:border-gold/40 active:scale-[0.97] transition-all duration-300"
           >
             View Full Gallery
             <ArrowRight size={15} />
