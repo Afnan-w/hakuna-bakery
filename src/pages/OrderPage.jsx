@@ -1,9 +1,9 @@
 import { useState, useRef } from 'react'
-import { motion, AnimatePresence, useInView } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import {
-  ArrowLeft, Check, CloudUpload, FileImage, Mail,
-  MessageCircle, Phone, Truck, X
+  ArrowLeft, Check, CloudUpload,
+  MessageCircle, Phone, X
 } from 'lucide-react'
 import { sizes, flavors, fillings, accentColors, deliveryZones, timeSlots } from '../data/sizes'
 
@@ -53,6 +53,7 @@ export default function OrderPage() {
   }
 
   const handleSubmit = () => {
+    if (!date) return
     setOrder({
       orderId: generateOrderId(),
       sizeName: sizeData.name,
@@ -178,25 +179,30 @@ export default function OrderPage() {
         </div>
 
         {/* Phase Indicator */}
-        <div className="flex items-center justify-center gap-4 mb-8 sm:mb-12">
-          {[1, 2].map((p) => (
-            <div key={p} className="flex items-center gap-3">
+        <div className="flex items-center justify-center gap-0 mb-8 sm:mb-12 max-w-xs mx-auto">
+          {[
+            { p: 1, label: 'Size' },
+            { p: 2, label: 'Customize' },
+          ].map((step, idx) => (
+            <div key={step.p} className="flex items-center flex-1">
               <button
-                onClick={() => p < phase && setPhase(p)}
-                className={`w-9 h-9 rounded-full flex items-center justify-center text-xs font-mono font-bold transition-all cursor-pointer ${
-                  phase >= p
+                onClick={() => step.p < phase && setPhase(step.p)}
+                className={`w-9 h-9 rounded-full flex items-center justify-center text-xs font-mono font-bold transition-all cursor-pointer shrink-0 ${
+                  phase >= step.p
                     ? 'bg-chocolate text-white'
                     : 'bg-butter text-cocoa/40'
-                } ${p < phase ? 'hover:scale-110' : ''}`}
+                } ${step.p < phase ? 'hover:scale-110' : ''}`}
               >
-                {phase > p ? <Check size={14} /> : p}
+                {phase > step.p ? <Check size={14} /> : step.p}
               </button>
-              <span className={`text-xs font-body font-bold tracking-wider uppercase hidden sm:block ${
-                phase >= p ? 'text-chocolate' : 'text-cocoa/30'
+              <span className={`text-xs font-body font-bold tracking-wider uppercase ml-2 ${
+                phase >= step.p ? 'text-chocolate' : 'text-cocoa/30'
               }`}>
-                {p === 1 ? 'Size' : 'Customize'}
+                {step.label}
               </span>
-              {p < 2 && <div className={`w-12 h-[2px] rounded-full ${phase > 1 ? 'bg-chocolate' : 'bg-butter'}`} />}
+              {idx === 0 && (
+                <div className={`flex-1 h-[2px] mx-3 rounded-full transition-colors duration-300 ${phase > 1 ? 'bg-chocolate' : 'bg-butter'}`} />
+              )}
             </div>
           ))}
         </div>
@@ -464,10 +470,10 @@ export default function OrderPage() {
                   </button>
                   <button
                     onClick={handleSubmit}
-                    disabled={!name || !phone}
+                    disabled={!name || !phone || !date}
                     className="flex-1 px-8 py-3.5 bg-chocolate text-white rounded-full text-sm font-body font-bold tracking-wide hover:bg-deep-cocoa active:scale-[0.97] transition-all duration-300 shadow-lg disabled:opacity-40 disabled:cursor-not-allowed"
                   >
-                    Place Order &mdash; {'\u09F3'}{total.toLocaleString()}
+                    {!date && name && phone ? 'Select a Delivery Date' : `Place Order — ${'\u09F3'}${total.toLocaleString()}`}
                   </button>
                 </div>
               </div>

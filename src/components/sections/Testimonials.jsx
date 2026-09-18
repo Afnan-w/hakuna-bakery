@@ -29,13 +29,15 @@ export default function Testimonials() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
   const [current, setCurrent] = useState(0)
+  const [paused, setPaused] = useState(false)
 
   useEffect(() => {
+    if (paused) return
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % testimonials.length)
     }, 5000)
     return () => clearInterval(timer)
-  }, [])
+  }, [paused])
 
   return (
     <section ref={ref} className="py-16 sm:py-24 px-4 sm:px-8 bg-vanilla/60 relative overflow-hidden">
@@ -55,7 +57,11 @@ export default function Testimonials() {
           <div className="w-12 h-[2px] bg-strawberry mx-auto mt-3 rounded-full" />
         </motion.div>
 
-        <div className="relative min-h-[200px]">
+        <div
+          className="relative min-h-[200px]"
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
+        >
           {testimonials.map((t, i) => (
             <motion.div
               key={i}

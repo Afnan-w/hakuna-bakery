@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
 import { Mail, Phone, MapPin } from 'lucide-react'
 
 export default function Footer() {
@@ -44,7 +43,7 @@ export default function Footer() {
               </h2>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-start gap-6 sm:gap-10">
+            <div className="flex flex-col sm:flex-row items-start gap-6 sm:gap-8">
               <div className="flex flex-col gap-2 text-sm">
                 <h3 className="text-[10px] font-body font-bold tracking-widest uppercase text-white/50 mb-1">
                   Quick Links
@@ -74,12 +73,44 @@ export default function Footer() {
                   <span>+880 1339656675</span>
                 </a>
               </div>
+
+              <div className="w-[1px] h-16 bg-white/10 rounded-full hidden sm:block" />
+
+              <div className="flex flex-col gap-2.5 text-xs">
+                <h3 className="text-[10px] font-body font-bold tracking-widest uppercase text-white/50 mb-1">
+                  Follow Us
+                </h3>
+                <a
+                  href="https://www.instagram.com/hakunapotata"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-white/60 hover:text-white transition-colors"
+                >
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-70">
+                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                  </svg>
+                  <span>Instagram</span>
+                </a>
+                <a
+                  href="https://www.facebook.com/hakunapotata"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-white/60 hover:text-white transition-colors"
+                >
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-70">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                  </svg>
+                  <span>Facebook</span>
+                </a>
+              </div>
             </div>
           </div>
 
           <div className="w-full pt-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-2.5 text-[10px] text-white/40 select-none">
             <div className="flex items-center gap-1.5 font-medium">
-              <span>&copy; 2026 HAKUNA POTATA</span>
+              <span>&copy; {new Date().getFullYear()} HAKUNA POTATA</span>
               <span className="text-white/20">&middot;</span>
               <span>All Rights Reserved</span>
             </div>

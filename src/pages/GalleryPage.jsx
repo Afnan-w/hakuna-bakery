@@ -1,5 +1,5 @@
 import { motion, useInView } from 'framer-motion'
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowLeft } from 'lucide-react'
 import { cakes } from '../data/cakes'
@@ -10,6 +10,7 @@ const categories = [
   { id: 'bento', label: 'Bento' },
   { id: 'celebration', label: 'Celebration' },
   { id: 'multi-tier', label: 'Multi-Tier' },
+  { id: 'special', label: 'Special' },
 ]
 
 const containerVariants = {
@@ -38,6 +39,24 @@ export default function GalleryPage() {
   const filtered = activeFilter === 'all'
     ? cakes
     : cakes.filter((c) => c.category === activeFilter)
+
+  const handleLightboxNav = useCallback((dir) => {
+    setLightbox((prev) => {
+      if (prev === null) return prev
+      return (prev + dir + filtered.length) % filtered.length
+    })
+  }, [filtered.length])
+
+  useEffect(() => {
+    if (lightbox === null) return
+    const onKey = (e) => {
+      if (e.key === 'Escape') setLightbox(null)
+      if (e.key === 'ArrowLeft') handleLightboxNav(-1)
+      if (e.key === 'ArrowRight') handleLightboxNav(1)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [lightbox, handleLightboxNav])
 
   return (
     <motion.div
@@ -100,6 +119,17 @@ export default function GalleryPage() {
           key={activeFilter}
           className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8"
         >
+          {filtered.length === 0 && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="col-span-full text-center py-16"
+            >
+              <StrawberrySvg className="w-10 h-10 mx-auto mb-4 opacity-40" />
+              <p className="font-display font-bold text-lg text-chocolate mb-2">No cakes found</p>
+              <p className="text-cocoa/50 text-sm">Try selecting a different category above.</p>
+            </motion.div>
+          )}
           {filtered.map((cake, idx) => (
             <motion.div
               key={cake.id}
@@ -150,6 +180,7 @@ export default function GalleryPage() {
           <button
             onClick={() => setLightbox(null)}
             className="absolute top-4 right-4 text-white/70 hover:text-white text-sm font-body cursor-pointer z-50"
+            aria-label="Close lightbox"
           >
             Close &times;
           </button>
@@ -157,8 +188,9 @@ export default function GalleryPage() {
           <div className="relative max-w-3xl w-full flex flex-col items-center" onClick={(e) => e.stopPropagation()}>
             <div className="w-full flex items-center justify-between px-2 pb-2">
               <button
-                onClick={() => setLightbox((prev) => (prev - 1 + filtered.length) % filtered.length)}
+                onClick={() => handleLightboxNav(-1)}
                 className="text-white/60 hover:text-white text-sm font-body cursor-pointer px-3 py-1"
+                aria-label="Previous cake"
               >
                 &larr; Prev
               </button>
@@ -166,8 +198,9 @@ export default function GalleryPage() {
                 {lightbox + 1} / {filtered.length}
               </span>
               <button
-                onClick={() => setLightbox((prev) => (prev + 1) % filtered.length)}
+                onClick={() => handleLightboxNav(1)}
                 className="text-white/60 hover:text-white text-sm font-body cursor-pointer px-3 py-1"
+                aria-label="Next cake"
               >
                 Next &rarr;
               </button>
