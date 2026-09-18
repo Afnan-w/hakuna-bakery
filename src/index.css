@@ -14,9 +14,8 @@
   --color-light-border: #FFE4EC;
   --color-pink-glow: rgba(255, 158, 181, 0.15);
 
-  --font-display: "Fredoka", system-ui, sans-serif;
-  --font-body: "Nunito", system-ui, sans-serif;
-  --font-accent: "Pacifico", cursive;
+  --font-display: "DM Sans", system-ui, sans-serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 }
 

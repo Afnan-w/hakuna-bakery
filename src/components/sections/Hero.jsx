@@ -64,7 +64,7 @@ export default function Hero() {
                     key={i}
                     variants={wordVariants}
                     className={`inline-block mr-[0.3em] ${
-                      word === '&' ? 'font-accent text-hello-pink text-[0.85em]' : ''
+                      word === '&' ? 'text-hello-pink italic text-[0.85em]' : ''
                     }`}
                   >
                     {word}
