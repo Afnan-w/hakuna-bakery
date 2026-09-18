@@ -1,61 +1,56 @@
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
-import { CherrySvg, ButtercreamFlowerSvg, SprinklesSvg } from '../decorative/FloatingElements'
+import { CherrySvg, ButtercreamFlowerSvg } from '../decorative/FloatingElements'
 
 const heroWords = ['Artisan', 'Bakery', '&', 'Custom', 'Cake', 'Studio']
 
 const containerVariants = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.08, delayChildren: 0.3 },
+    transition: { staggerChildren: 0.1, delayChildren: 0.2 },
   },
 }
 
 const wordVariants = {
-  hidden: { opacity: 0, y: 40, rotateX: -40 },
+  hidden: { opacity: 0, y: 60, rotateX: -40 },
   visible: {
     opacity: 1,
     y: 0,
     rotateX: 0,
-    transition: { type: 'spring', stiffness: 100, damping: 14, duration: 0.6 },
+    transition: { type: 'spring', stiffness: 80, damping: 12, duration: 0.7 },
   },
 }
 
 export default function Hero() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
+  const { scrollY } = useScroll()
+  const y1 = useTransform(scrollY, [0, 600], [0, -50])
+  const y2 = useTransform(scrollY, [0, 600], [0, -100])
 
   return (
     <section ref={ref} className="relative w-full overflow-hidden">
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-        <div className="absolute -top-24 -left-16 w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-strawberry/25 blur-3xl animate-blob" />
-        <div className="absolute top-1/3 -right-24 w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-pistachio/25 blur-3xl animate-blob" style={{ animationDelay: '3s' }} />
-        <div className="absolute -bottom-28 left-1/3 w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-lilac/25 blur-3xl animate-blob" style={{ animationDelay: '6s' }} />
-        <span className="absolute top-6 left-4 sm:top-8 sm:left-6 lg:left-12 animate-float text-2xl sm:text-4xl">🍓</span>
-        <span className="absolute top-20 right-4 sm:top-24 sm:right-10 animate-float-slow text-2xl sm:text-3xl">🧁</span>
-        <span className="absolute bottom-12 left-1/4 hidden lg:block animate-float-slow text-2xl sm:text-3xl">✨</span>
-        <span className="absolute bottom-24 right-1/4 hidden sm:block animate-wiggle text-xl sm:text-2xl">🍪</span>
-        <span className="absolute top-1/2 left-8 hidden xl:block animate-wiggle text-xl sm:text-2xl">🎂</span>
-        <SprinklesSvg className="absolute bottom-6 left-8 w-8 h-8 animate-float-slow opacity-80" />
-        <SprinklesSvg className="absolute top-8 right-24 w-10 h-10 animate-float opacity-80" />
-        <SprinklesSvg className="absolute bottom-12 right-16 hidden sm:block w-9 h-9 animate-wiggle opacity-80" />
+        <div className="absolute -top-40 -left-32 w-[500px] h-[500px] sm:w-[600px] sm:h-[600px] rounded-full bg-strawberry/20 blur-[100px] animate-blob" />
+        <div className="absolute top-1/3 -right-32 w-[450px] h-[450px] sm:w-[550px] sm:h-[550px] rounded-full bg-lilac/20 blur-[100px] animate-blob" style={{ animationDelay: '4s' }} />
+        <div className="absolute -bottom-40 left-1/4 w-[400px] h-[400px] sm:w-[500px] sm:h-[500px] rounded-full bg-pistachio/20 blur-[100px] animate-blob" style={{ animationDelay: '8s' }} />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 py-12 sm:py-16 lg:py-20 relative">
-        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 py-16 sm:py-20 lg:py-28 relative">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           {/* Text Side */}
           <div className="flex-1 text-center lg:text-left">
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-butter-light border border-butter mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-white/60 backdrop-blur-sm border border-strawberry/15 mb-8 shadow-sm"
             >
               <CherrySvg className="w-4 h-4" />
               <span className="text-[11px] font-body font-bold tracking-[0.2em] uppercase text-cocoa/70">
-                Dhaka, Bangladesh
+                Handcrafted in Dhaka
               </span>
             </motion.div>
 
@@ -65,13 +60,13 @@ export default function Hero() {
               animate={isInView ? 'visible' : 'hidden'}
               className="overflow-hidden"
             >
-              <h1 className="font-display font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.08] tracking-tight text-chocolate perspective-[800px]">
+              <h1 className="font-display font-bold text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[5.25rem] leading-[1.04] tracking-tight text-chocolate perspective-[800px]">
                 {heroWords.map((word, i) => (
                   <motion.span
                     key={i}
                     variants={wordVariants}
                     className={`inline-block mr-[0.3em] ${
-                      word === '&' ? 'text-strawberry italic font-normal' : ''
+                      word === '&' ? 'text-candy italic font-normal' : ''
                     }`}
                   >
                     {word}
@@ -83,29 +78,29 @@ export default function Hero() {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.8, duration: 0.6 }}
-              className="mt-6 text-cocoa/70 text-sm sm:text-base max-w-md mx-auto lg:mx-0 leading-relaxed"
+              transition={{ delay: 0.9, duration: 0.6 }}
+              className="mt-7 text-cocoa/65 text-base sm:text-lg max-w-lg mx-auto lg:mx-0 leading-relaxed"
             >
               Bespoke Korean Bento cakes, Vintage Lambeth piping, and celebration
-              multi-tier cake towers handcrafted in Dhaka.
+              multi-tier cake towers — every bite handcrafted with love.
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 1, duration: 0.6 }}
-              className="mt-8 flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start"
+              transition={{ delay: 1.1, duration: 0.6 }}
+              className="mt-10 flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start"
             >
               <Link
                 to="/order"
-                className="inline-flex items-center gap-2 px-7 py-3.5 bg-chocolate text-white rounded-full text-sm font-body font-bold tracking-wide hover:bg-deep-cocoa active:scale-[0.97] transition-all duration-300 shadow-lg shadow-chocolate/20 hover:shadow-xl hover:shadow-chocolate/30"
+                className="btn-shine inline-flex items-center gap-2.5 px-8 py-4 bg-gradient-to-r from-chocolate to-cocoa text-white rounded-full text-sm font-body font-bold tracking-wide hover:from-deep-cocoa hover:to-chocolate active:scale-[0.97] transition-all duration-300 shadow-xl shadow-chocolate/25 hover:shadow-2xl hover:shadow-chocolate/35"
               >
                 Order Your Cake
                 <ArrowRight size={16} />
               </Link>
               <Link
                 to="/gallery"
-                className="inline-flex items-center gap-2 px-7 py-3.5 bg-transparent text-chocolate border-2 border-chocolate/20 rounded-full text-sm font-body font-bold tracking-wide hover:border-chocolate/40 hover:bg-butter-light active:scale-[0.97] transition-all duration-300"
+                className="inline-flex items-center gap-2.5 px-8 py-4 bg-white/60 backdrop-blur-sm text-chocolate border border-chocolate/10 rounded-full text-sm font-body font-bold tracking-wide hover:bg-white hover:border-chocolate/20 active:scale-[0.97] transition-all duration-300 shadow-sm"
               >
                 View Gallery
               </Link>
@@ -114,49 +109,51 @@ export default function Hero() {
 
           {/* Image Side */}
           <div className="flex-1 relative">
-            <div className="flex items-start gap-4 sm:gap-6 justify-center">
+            <div className="flex items-start gap-5 sm:gap-8 justify-center">
               <motion.div
-                initial={{ opacity: 0, scale: 0.9, y: 30 }}
+                style={{ y: y1 }}
+                initial={{ opacity: 0, scale: 0.9, y: 40 }}
                 animate={isInView ? { opacity: 1, scale: 1, y: 0 } : {}}
-                transition={{ delay: 0.4, duration: 0.7, ease: 'easeOut' }}
-                className="w-[45%] max-w-[240px]"
+                transition={{ delay: 0.4, duration: 0.8, ease: 'easeOut' }}
+                className="w-[45%] max-w-[260px]"
               >
-                <div className="relative p-2 sm:p-2.5 arch-shape border-[1.5px] border-chocolate/80 bg-white shadow-[0_20px_50px_rgba(61,35,20,0.08)]">
-                  <div className="p-1 sm:p-1.5 arch-shape border border-butter bg-ivory">
+                <div className="relative p-3 arch-shape bg-gradient-to-b from-strawberry/25 to-lilac/25 shadow-[0_24px_60px_rgba(255,140,168,0.18)]">
+                  <div className="p-1.5 arch-shape bg-white">
                     <div className="arch-shape overflow-hidden aspect-[4/5] bg-butter-light">
                       <img
                         src="/hakuna-cookies.webp"
                         alt="Hakuna Potata Artisan Cookies"
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                        className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
                         loading="eager"
                       />
                     </div>
                   </div>
                 </div>
-                <p className="mt-3 text-center text-[10px] sm:text-xs font-body font-bold tracking-[0.2em] uppercase text-cocoa/40">
+                <p className="mt-4 text-center text-[10px] sm:text-xs font-body font-bold tracking-[0.2em] uppercase text-cocoa/40">
                   Handcrafted Cookies
                 </p>
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, scale: 0.9, y: 30 }}
+                style={{ y: y2 }}
+                initial={{ opacity: 0, scale: 0.9, y: 40 }}
                 animate={isInView ? { opacity: 1, scale: 1, y: 0 } : {}}
-                transition={{ delay: 0.6, duration: 0.7, ease: 'easeOut' }}
-                className="w-[45%] max-w-[240px] mt-8 sm:mt-12"
+                transition={{ delay: 0.6, duration: 0.8, ease: 'easeOut' }}
+                className="w-[45%] max-w-[260px] mt-10 sm:mt-16"
               >
-                <div className="relative p-2 sm:p-2.5 arch-shape border-[1.5px] border-chocolate/80 bg-white shadow-[0_20px_50px_rgba(61,35,20,0.08)]">
-                  <div className="p-1 sm:p-1.5 arch-shape border border-butter bg-ivory">
+                <div className="relative p-3 arch-shape bg-gradient-to-b from-pistachio/25 to-butter/25 shadow-[0_24px_60px_rgba(168,220,187,0.18)]">
+                  <div className="p-1.5 arch-shape bg-white">
                     <div className="arch-shape overflow-hidden aspect-[4/5] bg-butter-light">
                       <img
                         src="/hakuna-bakery.webp"
                         alt="Hakuna Potata Artisan Viennoiserie"
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                        className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
                         loading="eager"
                       />
                     </div>
                   </div>
                 </div>
-                <p className="mt-3 text-center text-[10px] sm:text-xs font-body font-bold tracking-[0.2em] uppercase text-cocoa/40">
+                <p className="mt-4 text-center text-[10px] sm:text-xs font-body font-bold tracking-[0.2em] uppercase text-cocoa/40">
                   Fresh Danishes & Bakes
                 </p>
               </motion.div>
@@ -164,11 +161,11 @@ export default function Hero() {
 
             <motion.div
               initial={{ opacity: 0, scale: 0 }}
-              animate={isInView ? { opacity: 0.6, scale: 1 } : {}}
-              transition={{ delay: 1.2, duration: 0.5 }}
-              className="absolute -top-4 -right-2 sm:right-8"
+              animate={isInView ? { opacity: 0.7, scale: 1 } : {}}
+              transition={{ delay: 1.2, duration: 0.5, type: 'spring' }}
+              className="absolute -top-6 -right-2 sm:right-6"
             >
-              <ButtercreamFlowerSvg className="w-12 h-12 sm:w-16 sm:h-16" />
+              <ButtercreamFlowerSvg className="w-14 h-14 sm:w-20 sm:h-20" />
             </motion.div>
           </div>
         </div>

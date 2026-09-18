@@ -4,7 +4,8 @@ import { Mail, Phone, MapPin } from 'lucide-react'
 export default function Footer() {
   return (
     <div className="relative w-full">
-      <footer className="w-full bg-deep-cocoa text-white pt-10 sm:pt-12 pb-6 px-4 sm:px-12 rounded-t-[24px] sm:rounded-t-[36px] shadow-2xl relative z-10">
+      <div className="h-1 w-full bg-gradient-to-r from-strawberry via-lilac to-pistachio" />
+      <footer className="w-full bg-deep-cocoa text-white pt-10 sm:pt-12 pb-6 px-4 sm:px-12 rounded-b-[24px] sm:rounded-b-[36px] shadow-2xl relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8 mb-8">
             <div className="flex items-center gap-3">

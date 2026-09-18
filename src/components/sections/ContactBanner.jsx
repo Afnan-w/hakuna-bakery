@@ -10,8 +10,6 @@ export default function ContactBanner() {
 
   return (
     <section ref={ref} className="py-16 sm:py-20 px-4 sm:px-8 relative">
-      <span className="pointer-events-none absolute -top-3 left-8 sm:left-16 z-10 animate-float text-2xl sm:text-3xl" aria-hidden="true">🧁</span>
-      <span className="pointer-events-none absolute -top-1 right-8 sm:right-20 z-10 animate-float-slow text-2xl sm:text-3xl" aria-hidden="true">🍰</span>
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}

@@ -6,6 +6,7 @@ import HowItWorks from '../components/sections/HowItWorks'
 import Testimonials from '../components/sections/Testimonials'
 import ContactBanner from '../components/sections/ContactBanner'
 import Marquee from '../components/decorative/Marquee'
+import WaveDivider from '../components/decorative/WaveDivider'
 
 const pageTransition = {
   initial: { opacity: 0 },
@@ -18,9 +19,12 @@ export default function HomePage() {
   return (
     <motion.div {...pageTransition}>
       <Hero />
+      <WaveDivider />
       <Marquee />
       <Specialties />
+      <WaveDivider fill="var(--color-vanilla)" />
       <SignatureCakes />
+      <WaveDivider />
       <Marquee
         tone="butter"
         reverse
@@ -34,6 +38,7 @@ export default function HomePage() {
         ]}
       />
       <HowItWorks />
+      <WaveDivider fill="var(--color-vanilla)" />
       <Testimonials />
       <ContactBanner />
     </motion.div>
